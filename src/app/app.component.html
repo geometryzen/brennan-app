@@ -45,42 +45,15 @@
   </div>
 
   <div id="ColumnOne" class="col-xs-4">
-
     <brennan-now-playing></brennan-now-playing>
-
-    <!-- PlayLists, CD, Presets, Upload-->
     <div class="well well-sm">
-      <!-- Mode Buttons -->
-      <div id="playlistTabs" class="btn-group btn-group-justified">
-        <a id='playlistTab' class="btn btn-default" onclick="selectPlaylistSubPanel(0)">Playlists</a>
-        <a id='CDTab' class="btn btn-default" onclick="selectPlaylistSubPanel(1)">CD</a>
-        <a id='PresetsTab' class="btn btn-default" onclick="selectPlaylistSubPanel(2)">Presets</a>
-        <a id='UploadTab' class="btn btn-default" onclick="selectPlaylistSubPanel(3)">Upload</a>
-      </div>
-      <!-- Mode -->
-      <div class="tab-content" id="panel1">
-        <brennan-playlist-panel></brennan-playlist-panel>
-        <brennan-disc></brennan-disc>
-        <brennan-upload></brennan-upload>
-        <brennan-presets></brennan-presets>
-      </div>
+      <brennan-actions></brennan-actions>
     </div>
   </div>
 
   <div id="ColumnTwo" class="col-xs-4">
     <div class="well well-sm" id="middleWell">
-      <div id="searchTabs" class="btn-group btn-group-justified">
-        <a id='SearchTab' class="btn btn-default" onclick="selectSearchSubPanel(0)"><span class="glyphicon glyphicon-search"></span></a>
-        <a id='VTunerTab' class="btn btn-default" onclick="selectSearchSubPanel(1)">vTuner</a>
-        <a id='YoutubeTab' class="btn btn-default" onclick="selectSearchSubPanel(2)" data-toggle="tooltip" title="Experimental">Youtube*</a>
-        <a id='USBTab' class="btn btn-default" onclick="selectSearchSubPanel(3)">USB</a>
-      </div>
-      <div class="tab-content" id="panel2">
-        <brennan-search></brennan-search>
-        <brennan-vtuner></brennan-vtuner>
-        <brennan-youtube></brennan-youtube>
-        <brennan-usb></brennan-usb>
-      </div>
+      <brennan-search-panel></brennan-search-panel>
     </div>
   </div>
 

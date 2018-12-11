@@ -1,0 +1,22 @@
+<ngb-tabset [justify]="fill" type="pills">
+    <ngb-tab title="Playlists">
+        <ng-template ngbTabContent>
+            <brennan-playlist-panel></brennan-playlist-panel>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="CD">
+        <ng-template ngbTabContent>
+            <brennan-disc></brennan-disc>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Presets">
+        <ng-template ngbTabContent>
+            <brennan-presets></brennan-presets>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Upload">
+        <ng-template ngbTabContent>
+            <brennan-upload></brennan-upload>
+        </ng-template>
+    </ngb-tab>
+</ngb-tabset>

@@ -1,0 +1,35 @@
+<!--
+<div id="searchTabs" class="btn-group btn-group-justified">
+    <a id='SearchTab' class="btn btn-default" onclick="selectSearchSubPanel(0)"><span class="glyphicon glyphicon-search"></span></a>
+    <a id='VTunerTab' class="btn btn-default" onclick="selectSearchSubPanel(1)">vTuner</a>
+    <a id='YoutubeTab' class="btn btn-default" onclick="selectSearchSubPanel(2)" data-toggle="tooltip" title="Experimental">Youtube*</a>
+    <a id='USBTab' class="btn btn-default" onclick="selectSearchSubPanel(3)">USB</a>
+</div>
+-->
+<div class="tab-content" id="panel2">
+</div>
+<ngb-tabset [justify]="fill" type="pills">
+    <ngb-tab>
+        <ng-template ngbTabTitle>
+            <span class="glyphicon glyphicon-search"></span>
+        </ng-template>
+        <ng-template ngbTabContent>
+            <brennan-search-hdd></brennan-search-hdd>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="vTuner">
+        <ng-template ngbTabContent>
+            <brennan-vtuner></brennan-vtuner>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="YouTube">
+        <ng-template ngbTabContent>
+            <brennan-youtube></brennan-youtube>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="USB">
+        <ng-template ngbTabContent>
+            <brennan-usb></brennan-usb>
+        </ng-template>
+    </ngb-tab>
+</ngb-tabset>
