@@ -1,0 +1,32 @@
+<div id="YoutubePanel" class="panelContent tab-paneDGH">
+    <div class="input-group scrollBoxHeader topButtons" id="youtubeSearchBar">
+        <div>
+            <input id="bTubeSearchValue" onkeydown="if (event.keyCode == 13) youtubeGo ()" type="text" class="form-control"
+                placeholder="Text search or Youtube url or id">
+        </div>
+        <div class="input-group-btn">
+            <button type="button" class="btn btn-default" onclick="youtubeGo()">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </div>
+
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" id="youtubeSearchHeading">Search results <span id="youtubeSearching"> <img class="fit"
+                    src="assets/images/ajax-loader.gif"></span></div>
+        <div class="panel-body vTunerScrollBox" id="YoutubeSearchResultsBox">
+            <table class="table table-hover">
+                <tbody id="youtubeSearchResultsTable"></tbody>
+            </table>
+
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">History <span id="youtubeStarting"> <img class="fit" src="assets/images/ajax-loader.gif"></span></div>
+        <div class="panel-body  vTunerScrollBox" id="YoutubeHistoryBox">
+            <table class="table table-hover">
+                <tbody id="youtubeHistoryTable"></tbody>
+            </table>
+        </div>
+    </div>
+</div>

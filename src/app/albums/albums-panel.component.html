@@ -1,0 +1,21 @@
+<div id="AlbumPanel">
+    <ul class="nav nav-pills nav-stacked scrollBoxHeader" id="albumHeader" onClick="clickArt()" ondragover="allowDrop(event)"
+        ondrop="dropArt(event)" onpaste="pasteArt(event)" data-toggle="tooltip" title="Drag Artwork here
+            or click image to open upload panel">
+        <li>
+            <a class="middle">
+                <div class="npInline w80"><span class="text-muted">Album </span><span id="albumname">None Selected</span></div>
+                <div class="npInline w20"><img id="albumImage"></div>
+            </a>
+            <!--					<a><span class="text-muted">Album </span><span id="albumname">None Selected</span><img id="albumImage" class="pull-right"></a>-->
+            <!--					<a class="col-sm-10"><span class="text-muted">Album </span><span id="albumname">None Selected</span></a>-->
+        </li>
+    </ul>
+    <div class="panelContent ArtistScrollBox">
+        <nav id="AlbumTracksBox">
+            <table class="table table-hover">
+                <tbody id="AlbumTracks"></tbody>
+            </table>
+        </nav>
+    </div>
+</div>

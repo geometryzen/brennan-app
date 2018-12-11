@@ -1,0 +1,26 @@
+<div id="UploadPanel" class="panelContent">
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div class="form-group">
+                        <input id="uploadAlbum" type="text" class="form-control" placeholder="Type album name here">
+                    </div>
+                    <div class="form-group">
+                        <input id="uploadArtist" type="text" class="form-control" placeholder="Type artist here">
+                    </div>
+                    <div class="form-group">
+                        <input id="uploadFileSelect" type="file" class="form-control" multiple />
+                    </div>
+                    <div id="uploading">
+                        <img src="assets/images/ajax-loader.gif"><span id="uploadProgress">&nbsp&nbsp&nbspSending Files</span>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default" onclick="uploadCancelFunction()">Cancel</button>
+                    <button type="button" class="btn btn-default" onclick="uploadFunction()">Send to B2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

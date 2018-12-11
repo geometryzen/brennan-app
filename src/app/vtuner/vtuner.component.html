@@ -1,0 +1,27 @@
+<div id="VTunerPanel" class="panelContent tab-paneDGH">
+    <div class="scrollBoxHeader">
+        <div id="vTunerButtons" class="btn-group topButtons">
+            <a href="#" data-toggle="tooltip" title="Go Back" class="btn btn-default" onclick="vTunerGoBack ()">Back</a>
+            <a href="#" data-toggle="tooltip" title="World" class="btn btn-default" onclick="vTunerInit ()">Top</a>
+
+        </div>
+    </div>
+    <div class="vTunerScrollBox" id="vTunerBox">
+        <table class="table table-hover">
+            <tbody id="vTunerTable" role="list" aria-label="vTuner categories"></tbody>
+        </table>
+    </div>
+    <div style="height:10px;"></div>
+    <div class="input-group scrollBoxHeader">
+        <input type="text" id="vTunerSearchInput" class="form-control" size="6" placeholder="Search vTuner" onkeydown="if (event.keyCode == 13) vTunerSearch ()">
+        <div class="input-group-btn">
+            <a class="btn btn-default" onclick="vTunerSearch ()" href="#"><span class="glyphicon glyphicon-search"></span></a>
+        </div>
+    </div>
+
+    <div class="vTunerScrollBox" id="vTunerSearchBox">
+        <table class="table table-hover">
+            <tbody id="vTunerMatches"></tbody>
+        </table>
+    </div>
+</div>

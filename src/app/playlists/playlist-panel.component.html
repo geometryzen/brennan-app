@@ -1,0 +1,32 @@
+<div id="playlistPanel" class="panelContent">
+    <div class="scrollBoxHeader">
+        <div id="playlistButtons" class="btn-group topButtons">
+            <a tabindex="-1" class="btn btn-default dropdown-toggle" title="Select playlist" id="menu1" data-toggle="dropdown"
+                href="#" draggable="true" ondragstart="dragPlaylist(event)">Playlist
+                <span class="caret"></span></a>
+            <!--				<a tabindex="-1" class="btn btn-default" href="#" data-toggle="tooltip" title="Play this playlist" onclick="playPlaylist ()">Play</a>-->
+            <a tabindex="-1" class="btn btn-default" href="#" data-toggle="tooltip" title="Rename this playlist"
+                onclick="renamePlaylist ()">Rename</a>
+            <a tabindex="-1" class="btn btn-default" href="#" data-toggle="tooltip" title="Create a New Playlist"
+                onclick="createPlaylist ()">New</a>
+            <a tabindex="-1" class="btn btn-default" href="#" data-toggle="tooltip" title="Add or Subtract Playlists"
+                onclick="mixPlaylist ()">Mix</a>
+            <!--				<a tabindex="-1" class="btn btn-default" href="#" ondragover="allowDrop(event)" ondrop="dropBin(event)" data-toggle="tooltip" title="Drag playlist items here to remove from playlist"><span class="glyphicon glyphicon-trash" ></span></a>-->
+            <a tabindex="-1" class="btn btn-default iconToggle" href="#" data-toggle="tooltip" title="Search Only Current Playlist"
+                onclick="playlistFilterToggle()"><span class="glyphicon glyphicon-list myGrey" id='playlistCheckbox'></span></a>
+
+            <ul class="dropdown-menu" id="playlistDropdownUl" role="menu">
+                <li><a href="#">Red</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="ScrollBox" id="playlistContainer">
+        <table class="table table-hover">
+            <tbody id="playlistTbody">
+                <tr>
+                    <td>Empty</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

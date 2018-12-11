@@ -1,0 +1,30 @@
+<div id="CDPanel" class="panelContent">
+    <div id="cdTitleBar" class="panel panel-default">
+        <div class="panel-heading">
+            <div class="btn-group pull-right">
+                <a href="#" class="btn btn-default" onclick="ripFunction()" data-toggle="tooltip" title="Rip CD">
+                    <span class="glyphicon glyphicon-save"></span>
+                </a>
+                <a href="#" class="btn btn-default transportButton" value='eject' data-toggle="tooltip" title="Eject">
+                    <span class="glyphicon glyphicon-eject"></span>
+                </a>
+                <a href="#" class="btn btn-default" onclick="getArtFunction()" data-toggle="tooltip" title="Get Album Art">Art</a>
+            </div>
+            <h4 id="cdstatus">status</h4>
+        </div>
+    </div>
+    <div class="scrollBoxHeader" id="CDDBPanel">
+        <div class="btn-group">
+            <a class="btn btn-default dropdown-toggle" id="menu2" data-toggle="dropdown" href="#">CDDB
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu" id="CDDBDropdownUl">
+                <li><a href="#">Dark Side of The Moon</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="fetchingArt">
+        <img src="assets/images/ajax-loader.gif">
+    </div>
+    <div id="cdbox">
+    </div>
+</div>

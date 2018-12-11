@@ -1,0 +1,20 @@
+<div id="USBPanel" class="panelContent tab-paneDGH">
+    <ol class="breadcrumb topButtons" id="USBBreadcrumb">
+        <li class="breadcrumb-item" id="USBPath"></li>
+    </ol>
+    <div id="USBButtons" class="btn-group">
+        <button type="button" class="btn btn-default" data-toggle="tooltip" title="Up to parent folder" onclick="usbUp ()">Up</button>
+        <button type="button" class="btn btn-default" data-toggle="tooltip" title="Select USB A" onclick="usbA ()">USB
+            A</button>
+        <button type="button" class="btn btn-default" data-toggle="tooltip" title="Select USB C" onclick="usbC ()">USB
+            C</button>
+    </div>
+    <div class="panel-body USBScrollBox" id="USBItemsBox">
+        <table class="table table-hover">
+            <tbody id="USBItems"></tbody>
+        </table>
+    </div>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" id="USBBackgroundText"></li>
+    </ol>
+</div>
