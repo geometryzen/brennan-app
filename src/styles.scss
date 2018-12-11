@@ -273,7 +273,7 @@ div[class^="col"] {
 .topBorder {
     border-style: solid;
     border-width: 2px 0px 0px 0px;
-    border-colour: white;
+    border-color: white;
 }
 
 #cdbox img {
@@ -284,12 +284,12 @@ div[class^="col"] {
 #canvasBox {
     margin: 10px 0px 0px 0px;
 }
-/*
+
 @font-face {
     font-family: 'icomoon';
-    src: url('fonts/icomoon.woff');
+    src: url('/assets/fonts/icomoon.woff');
 }
-*/
+
 .icon-radioMast:before {
     font-family: icomoon;
     content: "\e600";

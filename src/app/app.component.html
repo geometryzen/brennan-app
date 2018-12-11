@@ -45,35 +45,48 @@
   </div>
 
   <div id="ColumnOne" class="col-xs-4">
+
+
+
     <div id="nowPlayingWell" class="well well-sm" ondragover="allowDrop(event)" ondrop="dropSpeaker(event)">
+
+
       <!--	<a class="col-sm-2 btn btn-default" href="#" title="Random On Off" onclick="randomToggle()"><span id="randomIcon" class="glyphicon glyphicon-random" ></span></a>-->
+
+
       <ul tabindex="-1" id="t1" class="nav nav-pills nav-stacked scrollBoxHeader">
-        <li id="t2">
-          <a class="col-sm-10" id="t3"><span class="text-muted">Source </span><span id="sourceHeader">Hard Disk</span></a>
+        <li id="t2"><a class="col-sm-10" id="t3"><span class="text-muted">Source </span><span id="sourceHeader">Hard
+              Disk</span></a>
           <a id="settingsButton" tabindex="-1" class="col-sm-2 btn btn-default" href="#" title="Settings & Status" role="button"
             onclick="openSettingsModal()"><span class="glyphicon glyphicon-cog"></span></a>
         </li>
       </ul>
+
+
       <div class="panelContent" id="nowPlayingPanel">
 
         <div class="panel panel-default" data-toggle="tooltip" title="Drag items here to Play">
 
           <!--
-          <div class="panel-body" id="nowPlayingBody"></div>
-          -->
+            <div class="panel-body" id="nowPlayingBody">
+       
+            </div>
+    -->
 
           <div class="panel-body">
             <div class="npInline col-sm-8" id="nowPlayingBody"></div>
-            <div class="npInline col-sm-4" id="nowPlayingArt"><img src="assets/img/noimage.jpg" width="100%"></div>
+            <div class="npInline col-sm-4" id="nowPlayingArt"><img src="assets/images/noimage.jpg" width="100%"></div>
           </div>
           <!--
-          <div class="panel-body">
-            <div class="npInline" id="nowPlayingBody"></div>
-            <div class="npInline" id="nowPlayingArt"></div>
-          </div>
-          -->
+            <div class="panel-body">
+              <div class="npInline" id="nowPlayingBody"></div>
+              <div class="npInline" id="nowPlayingArt"></div>
+            </div>
+    -->
 
         </div>
+
+
 
         <div class="btn-group btn-group-justified">
           <a href="#" class="btn btn-default" data-toggle="tooltip" title="Tone Control" onclick="openToneControl ()"><span
@@ -92,22 +105,28 @@
 
         <div class="panel panel-default" data-toggle="tooltip" title="Drag items here to Play">
           <div id="volumeSlider">
-            <!--
-            <input type="range" name="slider-1" id="slider-1" class="danielstern" min="0" max="64" value="32">
-            -->
+            <!--					<input type="range" name="slider-1" id="slider-1" class="danielstern" min="0" max="64" value="32">-->
             <input type="range" title="Volume" name="slider-1" id="slider-1" class="danielstern" min="0" max="64" value="32">
           </div>
         </div>
+
       </div>
+
     </div>
+
+
+
+
     <div class="well well-sm">
 
       <div id="playlistTabs" class="btn-group btn-group-justified">
+
         <a id='playlistTab' class="btn btn-default" onclick="selectPlaylistSubPanel(0)">Playlists</a>
         <a id='CDTab' class="btn btn-default" onclick="selectPlaylistSubPanel(1)">CD</a>
         <a id='PresetsTab' class="btn btn-default" onclick="selectPlaylistSubPanel(2)">Presets</a>
         <a id='UploadTab' class="btn btn-default" onclick="selectPlaylistSubPanel(3)">Upload</a>
       </div>
+
 
       <div class="tab-content" id="panel1">
 
@@ -160,14 +179,15 @@
           </div>
           <div class="scrollBoxHeader" id="CDDBPanel">
             <div class="btn-group">
-              <a class="btn btn-default dropdown-toggle" id="menu2" data-toggle="dropdown" href="#">CDDB <span class="caret"></span></a>
+              <a class="btn btn-default dropdown-toggle" id="menu2" data-toggle="dropdown" href="#">CDDB
+                <span class="caret"></span></a>
               <ul class="dropdown-menu" id="CDDBDropdownUl">
                 <li><a href="#">Dark Side of The Moon</a></li>
               </ul>
             </div>
           </div>
           <div id="fetchingArt">
-            <img src="assets/img/ajax-loader.gif">
+            <img src="assets/images/ajax-loader.gif">
           </div>
           <div id="cdbox">
           </div>
@@ -189,7 +209,7 @@
                     <input id="uploadFileSelect" type="file" class="form-control" multiple />
                   </div>
                   <div id="uploading">
-                    <img src="assets/img/ajax-loader.gif"><span id="uploadProgress">&nbsp&nbsp&nbspSending Files</span>
+                    <img src="assets/images/ajax-loader.gif"><span id="uploadProgress">&nbsp&nbsp&nbspSending Files</span>
                   </div>
                 </div>
                 <div>
@@ -209,7 +229,6 @@
             </table>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -346,7 +365,7 @@
 
       <div class="modal-content">
         <div class="modal-header">
-          <p id="albumArtTitle">Album Art Search <span id="artSearching"> <img class="fit" src="assets/img/ajax-loader.gif"></span></p>
+          <p id="albumArtTitle">Album Art Search <span id="artSearching"> <img class="fit" src="assets/images/ajax-loader.gif"></span></p>
           <p id="albumArtArtist"></p>
           <p id="albumArtAlbum"></p>
         </div>
@@ -362,7 +381,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- Playlist Item Modal -->
   <div id="playlistItemModal" class="modal" role="dialog">
@@ -390,6 +408,7 @@
   <!-- vTuner Search Item Menu Modal -->
   <div id="vTunerSearchMenuModal" class="modal" role="dialog">
     <div class="modal-dialog modal-sm">
+
       <div class="modal-content">
         <div class="modal-header">
           <p id="vTunerSearchMenuTitle" class="modal-title">Search Item</p>
@@ -406,6 +425,7 @@
   <!-- vTuner Item Menu Modal -->
   <div id="vTunerItemMenuModal" class="modal" role="dialog">
     <div class="modal-dialog modal-sm">
+
       <div class="modal-content">
         <div class="modal-header">
           <p id="vTunerItemMenuTitle" class="modal-title">Search Item</p>
@@ -422,6 +442,7 @@
   <!-- Tone Control Modal -->
   <div id="toneModal" class="modal" role="dialog">
     <div class="modal-dialog modal-sm">
+
       <div class="modal-content">
         <div class="modal-header">
           <p class="modal-title">Tone Control</p>
@@ -442,12 +463,11 @@
   <!-- Are You Sure Modal -->
   <div id="areYouSureModal" class="modal" role="dialog">
     <div class="modal-dialog modal-sm">
+
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Delete</h4>
-          <br />
-          <p id="areYouSureTitle" class="modal-title">Name</p>
-          <br />
+          <h4 class="modal-title">Delete</h4><br />
+          <p id="areYouSureTitle" class="modal-title">Name</p><br />
           <h4 class="modal-title">Are You Sure?</h4>
         </div>
         <div class="modal-body">
@@ -463,10 +483,10 @@
   <!-- General Are You Sure Modal -->
   <div id="generalAreYouSureModal" class="modal" role="dialog">
     <div class="modal-dialog modal-sm">
+
       <div class="modal-content">
         <div class="modal-header">
-          <p id="generalAreYouSureTitle" class="modal-title">Name</p>
-          <br />
+          <p id="generalAreYouSureTitle" class="modal-title">Name</p><br />
           <h4 class="modal-title">Are You Sure?</h4>
         </div>
         <div class="modal-body">
@@ -481,6 +501,7 @@
 
   <div id="guestModeModal" class="modal" role="dialog">
     <div class="modal-dialog modal-sm">
+
       <div class="modal-content">
         <div class="modal-header">
           <p class="modal-title">Guest Mode!</p>
@@ -498,6 +519,7 @@
   <!-- Alert Modal -->
   <div id="alertModal" class="modal" role="dialog">
     <div class="modal-dialog modal-sm">
+
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Alert</h4>
@@ -515,15 +537,15 @@
   <!-- Add To Playlist Modal -->
   <div id="addToPlaylistModal" class="modal" role="dialog">
     <div class="modal-dialog modal-sm">
+
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Add to Playlist</h4>
-          <br />
+          <h4 class="modal-title">Add to Playlist</h4><br />
+
         </div>
         <div class="modal-body">
           <p class="text-muted">Add</p>
-          <p id="addToPlaylistTitle" class="modal-title">Name</p>
-          <br />
+          <p id="addToPlaylistTitle" class="modal-title">Name</p><br />
           <p class="text-muted">To playlist</p>
           <div class="btn-group">
             <a class="btn btn-default btn-block dropdown-toggle" id="addToPlaylistMenu" data-toggle="dropdown" href="#">Red
@@ -533,6 +555,8 @@
               <li><a href="#">Orange</a></li>
             </ul>
           </div>
+
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -546,203 +570,221 @@
 
     <div class="well well-sm" id="middleWell">
 
-      <!-- Tab Buttons: SearchTab, vTunerTab, YoutubeTab, USBTab -->
-      <div id="searchTabs" class=" btn-group btn-group-justified">
-        <a id='SearchTab' class=" btn btn-default " onclick=" selectSearchSubPanel(0) "><span class="glyphicon glyphicon-search "></span></a>
-        <a id='VTunerTab' class=" btn btn-default " onclick=" selectSearchSubPanel(1)">vTuner</a>
-        <a id='YoutubeTab' class=" btn btn-default " onclick=" selectSearchSubPanel(2) " data-toggle="tooltip" title=" Experimental ">Youtube*</a>
-        <a id='USBTab' class=" btn btn-default " onclick="selectSearchSubPanel(3)">USB</a>
+      <div id="searchTabs" class="btn-group btn-group-justified">
+
+        <a id='SearchTab' class="btn btn-default" onclick="selectSearchSubPanel(0)"><span class="glyphicon glyphicon-search"></span></a>
+        <a id='VTunerTab' class="btn btn-default" onclick="selectSearchSubPanel(1)">vTuner</a>
+        <a id='YoutubeTab' class="btn btn-default" onclick="selectSearchSubPanel(2)" data-toggle="tooltip" title="Experimental">Youtube*</a>
+        <a id='USBTab' class="btn btn-default" onclick="selectSearchSubPanel(3)">USB</a>
+
       </div>
 
-      <!-- Tab Content: Search, vTuner, Youtube, USB -->
-      <div class=" tab-content " id="panel2">
+      <div class="tab-content" id="panel2">
+
 
         <!-- Search -->
-        <div id=" SearchPanel " class=" panelContent tab-pane ">
+
+
+        <div id="SearchPanel" class="panelContent tab-paneDGH">
+
           <div id="searchButtons" class="input-group scrollBoxHeader topButtons">
             <div>
-              <!--
-              <input type=" text " id=" searchInput " class="form-control " size=" 6 " placeholder=" Search B2 " onkeyup=" searchFunction() ">
-              -->
-              <input type=" text " id="searchInput " class=" form-control " size=" 6 " placeholder="Search B2" onkeyup=" searchFunction()">
+              <!--				<input type="text" id="searchInput" class="form-control" size="6" placeholder="Search B2" onkeyup="searchFunction()">-->
+              <input type="text" id="searchInput" class="form-control" size="6" placeholder="Search B2" onkeyup="searchFunction()">
+
+
+
             </div>
-            <div class=" input-group-btn ">
-              <!--
-              <a tabindex=" -1 " class=" btn btn-default iconToggle" href=" # " data-toggle=" tooltip " title=" Search Only Current Playlist "><span class=" glyphicon      glyphicon-list myGrey " id='playlistCheckbox'></span></a>
-              -->
-              <a tabindex=" -1 " class=" btn btn-default iconToggle" href=" # " title=" Artists toggle ">
-                <span class=" glyphicon glyphicon-user" id='artistCheckbox'></span>
-              </a>
-              <a tabindex=" -1 " class=" btn btn-default iconToggle " href=" # " title="Albums toggle">
-                <span class=" glyphicon glyphicon-cd " id='albumCheckbox'></span>
-              </a>
-              <a tabindex="-1" class=" btn btn-default iconToggle " href=" # " title=" Tracks toggle ">
-                <span class=" glyphicon glyphicon-music" id='trackCheckbox'></span>
-              </a>
-              <a tabindex=" -1 " class=" btn btn-default iconToggle " href=" # " title="Radio Stations toggle ">
-                <span class=" icon-radioMast" id='radioCheckbox'></span>
-              </a>
+            <div class="input-group-btn">
+              <!--				<a tabindex="-1" class="btn btn-default iconToggle" href="#" data-toggle="tooltip" title="Search Only Current Playlist"><span class="glyphicon glyphicon-list myGrey" id='playlistCheckbox'></span></a>-->
+              <a tabindex="-1" class="btn btn-default iconToggle" href="#" title="Artists toggle"><span class="glyphicon glyphicon-user"
+                  id='artistCheckbox'></span></a>
+              <a tabindex="-1" class="btn btn-default iconToggle" href="#" title="Albums toggle"><span class="glyphicon glyphicon-cd"
+                  id='albumCheckbox'></span></a>
+              <a tabindex="-1" class="btn btn-default iconToggle" href="#" title="Tracks toggle"><span class="glyphicon glyphicon-music"
+                  id='trackCheckbox'></span></a>
+              <a tabindex="-1" class="btn btn-default iconToggle" href="#" title="Radio Stations toggle"><span class="icon-radioMast"
+                  id='radioCheckbox'></span></a>
             </div>
+
           </div>
-          <div class=" SearchScrollBox " id=" SearchContainer">
-            <table class=" table table-hover ">
+
+
+
+
+          <div class="SearchScrollBox" id="SearchContainer">
+            <table class="table table-hover">
               <tbody id="Results"></tbody>
             </table>
           </div>
+
         </div>
 
         <!-- vTuner -->
-        <div id=" VTunerPanel " class=" panelContent tab-pane">
-          <div class=" scrollBoxHeader ">
-            <div id=" vTunerButtons " class=" btn-group topButtons ">
-              <a href="#" data-toggle=" tooltip " title=" Go Back " class=" btn btn-default " onclick="vTunerGoBack()">Back</a>
-              <a href=" # " data-toggle=" tooltip " title=" World " class=" btn btn-default " onclick="vTunerInit()">Top</a>
-            </div>
-          </div>
-          <div class=" vTunerScrollBox " id=" vTunerBox ">
-            <table class=" table table-hover ">
-              <tbody id=" vTunerTable " role=" list " aria-label=" vTuner categories"></tbody>
-            </table>
-          </div>
-          <div style=" height:10px; "></div>
-          <div class=" input-group scrollBoxHeader">
-            <input type=" text " id=" vTunerSearchInput " class=" form-control " size=" 6 " placeholder=" Search vTuner"
-              onkeydown=" if (event.keyCode==1 /*3*/) vTunerSearch () ">
-            <div class=" input-group-btn ">
-              <a class=" btn btn-default " onclick=" vTunerSearch () " href=" # ">
-                <span class=" glyphicon glyphicon-search"></span>
-              </a>
+
+        <div id="VTunerPanel" class="panelContent tab-pane">
+
+          <div class="scrollBoxHeader">
+            <div id="vTunerButtons" class="btn-group topButtons">
+              <a href="#" data-toggle="tooltip" title="Go Back" class="btn btn-default" onclick="vTunerGoBack ()">Back</a>
+              <a href="#" data-toggle="tooltip" title="World" class="btn btn-default" onclick="vTunerInit ()">Top</a>
+
             </div>
           </div>
 
-          <div class=" vTunerScrollBox " id=" vTunerSearchBox ">
-            <table class=" table table-hover ">
-              <tbody id=" vTunerMatches "></tbody>
+
+          <div class="vTunerScrollBox" id="vTunerBox">
+            <table class="table table-hover">
+              <tbody id="vTunerTable" role="list" aria-label="vTuner categories"></tbody>
+            </table>
+          </div>
+
+          <div style="height:10px;"></div>
+
+          <div class="input-group scrollBoxHeader">
+            <input type="text" id="vTunerSearchInput" class="form-control" size="6" placeholder="Search vTuner"
+              onkeydown="if (event.keyCode == 13) vTunerSearch ()">
+            <div class="input-group-btn">
+              <a class="btn btn-default" onclick="vTunerSearch ()" href="#"><span class="glyphicon glyphicon-search"></span></a>
+            </div>
+          </div>
+
+          <div class="vTunerScrollBox" id="vTunerSearchBox">
+            <table class="table table-hover">
+              <tbody id="vTunerMatches"></tbody>
             </table>
           </div>
         </div>
 
+
         <!-- Youtube -->
-        <div id="YoutubePanel" class=" panelContent tab-pane ">
-          <div class=" input-group scrollBoxHeader topButtons " id="youtubeSearchBar">
+
+        <div id="YoutubePanel" class="panelContent tab-pane">
+
+          <div class="input-group scrollBoxHeader topButtons" id="youtubeSearchBar">
             <div>
-              <input id=" bTubeSearchValue " onkeydown=" if (event.keyCode==1 /*3*/) youtubeGo ()" type=" text " class=" form-control "
-                placeholder=" Text search or Youtube url or id ">
+              <input id="bTubeSearchValue" onkeydown="if (event.keyCode == 13) youtubeGo ()" type="text" class="form-control"
+                placeholder="Text search or Youtube url or id">
             </div>
             <div class="input-group-btn">
-              <button type=" button " class=" btn btn-default " onclick=" youtubeGo()">
+              <button type="button" class="btn btn-default" onclick="youtubeGo()">
                 <span class="glyphicon glyphicon-search"></span>
               </button>
+            </div>
+
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading" id="youtubeSearchHeading">Search results <span id="youtubeSearching"> <img class="fit"
+                  src="assets/images/ajax-loader.gif"></span></div>
+            <div class="panel-body vTunerScrollBox" id="YoutubeSearchResultsBox">
+              <table class="table table-hover">
+                <tbody id="youtubeSearchResultsTable"></tbody>
+              </table>
+
             </div>
           </div>
 
           <div class="panel panel-default">
-            <div class=" panel-heading " id=" youtubeSearchHeading ">Search results <span id="youtubeSearching"> <img
-                  class=" fit " src="assets/img/ajax-loader.gif"></span>
-            </div>
-            <div class="panel-body vTunerScrollBox" id=" YoutubeSearchResultsBox ">
-              <table class=" table table-hover ">
-                <tbody id="youtubeSearchResultsTable "></tbody>
+            <div class="panel-heading">History <span id="youtubeStarting"> <img class="fit" src="assets/images/ajax-loader.gif"></span></div>
+            <div class="panel-body  vTunerScrollBox" id="YoutubeHistoryBox">
+              <table class="table table-hover">
+                <tbody id="youtubeHistoryTable"></tbody>
               </table>
             </div>
           </div>
-          <div class=" panel panel-default ">
-            <div class=" panel-heading ">History <span id=" youtubeStarting "> <img class=" fit " src="assets/img/ajax-loader.gif"></span></div>
-            <div class=" panel-body vTunerScrollBox " id=" YoutubeHistoryBox">
-              <table class=" table table-hover ">
-                <tbody id=" youtubeHistoryTable"></tbody>
-              </table>
-            </div>
-          </div>
+
+
+
         </div>
 
+
         <!-- USB -->
-        <div id=" USBPanel " class="panelContent tab-pane ">
-          <ol class=" breadcrumb topButtons " id=" USBBreadcrumb ">
-            <li class=" breadcrumb-item" id=" USBPath "></li>
+
+        <div id="USBPanel" class="panelContent tab-pane">
+
+          <ol class="breadcrumb topButtons" id="USBBreadcrumb">
+            <li class="breadcrumb-item" id="USBPath"></li>
           </ol>
-          <div id=" USBButtons " class=" btn-group ">
-            <button type=" button " class="btn btn-default" data-toggle="tooltip" title="Up to parent folder " onclick=" usbUp ()">Up</button>
-            <button type=" button " class="btn btn-default" data-toggle="tooltip" title="Select USB A" onclick=" usbA () ">USB
+          <div id="USBButtons" class="btn-group">
+            <button type="button" class="btn btn-default" data-toggle="tooltip" title="Up to parent folder" onclick="usbUp ()">Up</button>
+            <button type="button" class="btn btn-default" data-toggle="tooltip" title="Select USB A" onclick="usbA ()">USB
               A</button>
-            <button type=" button " class="btn btn-default" data-toggle="tooltip" title=" Select USB C " onclick=" usbC () ">USB
+            <button type="button" class="btn btn-default" data-toggle="tooltip" title="Select USB C" onclick="usbC ()">USB
               C</button>
           </div>
-          <div class=" panel-body USBScrollBox" id=" USBItemsBox ">
-            <table class=" table table-hover ">
-              <tbody id=" USBItems"></tbody>
+          <div class="panel-body USBScrollBox" id="USBItemsBox">
+            <table class="table table-hover">
+              <tbody id="USBItems"></tbody>
             </table>
           </div>
-          <ol class=" breadcrumb ">
-            <li class=" breadcrumb-item " id=" USBBackgroundText"></li>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item" id="USBBackgroundText"></li>
           </ol>
         </div>
+
+
+
       </div>
+
 
     </div>
 
 
   </div>
 
-  <div id=" ColumnThree " class=" col-xs-4 ">
+  <div id="ColumnThree" class="col-xs-4">
 
-    <div id="  ArtistWell " class=" well well-sm ">
+    <div id="ArtistWell" class="well well-sm">
 
       <!-- Artist -->
-      <div id=" ArtistPanel ">
 
-        <ul class=" nav nav-pills nav-stacked scrollBoxHeader " id=" artistHeader ">
-          <li><a><span class=" text-muted ">Artist </span><span id="artistname ">None Selected</span></a></li>
+
+      <div id="ArtistPanel">
+
+        <ul class="nav nav-pills nav-stacked scrollBoxHeader" id="artistHeader">
+          <li><a><span class="text-muted">Artist </span><span id="artistname">None Selected</span></a>
+          </li>
         </ul>
 
-        <div class=" panelContent ArtistScrollBox ">
-          <nav id="ArtistAlbumsBox ">
-            <table class=" table table-hover ">
-              <tbody id=" ArtistAlbums"></tbody>
+        <div class="panelContent ArtistScrollBox">
+          <nav id="ArtistAlbumsBox">
+            <table class="table table-hover">
+              <tbody id="ArtistAlbums"></tbody>
             </table>
           </nav>
         </div>
       </div>
     </div>
 
-    <div id=" AlbumWell " class=" well well-sm">
+    <div id="AlbumWell" class="well well-sm">
 
       <!-- Album -->
-      <div id=" AlbumPanel ">
 
-        <ul class=" nav nav-pills nav-stacked scrollBoxHeader " id="
-      albumHeader " onClick=" clickArt() "
-          ondragover=" allowDrop(event) " ondrop=" dropArt(event) " onpaste="
-      pasteArt(event) " data-toggle=" tooltip "
-          title=" Drag Artwork here or click image to open upload panel
-      ">
+      <div id="AlbumPanel">
+
+        <ul class="nav nav-pills nav-stacked scrollBoxHeader" id="albumHeader" onClick="clickArt()" ondragover="allowDrop(event)"
+          ondrop="dropArt(event)" onpaste="pasteArt(event)" data-toggle="tooltip" title="Drag Artwork here
+    or click image to open upload panel">
 
           <li>
-            <a class=" middle ">
-              <div class=" npInline w80 "><span class=" text-muted
-      ">Album </span><span id=" albumname ">None
-                  Selected</span></div>
-              <div class=" npInline w20 "><img id="
-      albumImage "></div>
+            <a class="middle">
+              <div class="npInline w80"><span class="text-muted">Album </span><span id="albumname">None Selected</span></div>
+              <div class="npInline w20"><img id="albumImage"></div>
             </a>
 
-            <!--					<a><span class=" text-muted ">Album </span><span id=" albumname
-      ">None Selected</span><img id=" albumImage " class=" pull-right "></a>-->
-            <!--					<a class=" col-sm-10
-      "><span class=" text-muted ">Album </span><span id=" albumname
-      ">None Selected</span></a>-->
+            <!--					<a><span class="text-muted">Album </span><span id="albumname">None Selected</span><img id="albumImage" class="pull-right"></a>-->
+            <!--					<a class="col-sm-10"><span class="text-muted">Album </span><span id="albumname">None Selected</span></a>-->
 
 
           </li>
 
         </ul>
 
-        <div class=" panelContent ArtistScrollBox ">
-          <nav id="
-      AlbumTracksBox ">
-            <table class=" table table-hover ">
-              <tbody id=" AlbumTracks
-      "></tbody>
+        <div class="panelContent ArtistScrollBox">
+          <nav id="AlbumTracksBox">
+            <table class="table table-hover">
+              <tbody id="AlbumTracks"></tbody>
             </table>
           </nav>
         </div>
@@ -753,181 +795,130 @@
   </div>
 
   <!-- Debug Modal -->
-  <div id=" debugModal
-      " class=" modal " role=" dialog ">
-    <div class=" modal-dialog modal-lg ">
+  <div id="debugModal" class="modal" role="dialog">
+    <div class="modal-dialog modal-lg">
 
-      <div class=" modal-content
-      ">
-        <div class=" modal-header ">
-          <h4 class=" modal-title ">Debug</h4><br />
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Debug</h4><br />
         </div>
-        <div class="
-      modal-body ">
+        <div class="modal-body">
 
-          <div id=" debugText ">
+          <div id="debugText">
 
           </div>
 
 
         </div>
-        <div class=" modal-footer
-      ">
+        <div class="modal-footer">
 
           <!--
-    <div class=" btn-group ">
-      <a class=" btn btn-default dropdown-toggle " title=" Logging
-      Mode " id=" loggingMenu " data-toggle=" dropdown " href=" # ">Normal <span class=" caret
-      "></span></a>
-      <ul class=" dropdown-menu ">
-        <li><a href=" # " onclick=" setLogging( 'Normal' )
-      ">Normal</a></li>
-        <li><a href=" # " onclick=" setLogging( 'File' ) ">File</a></li>
-        <li><a href="
-      # " onclick=" setLogging( 'TV Off' )
-      ">TV Off</a></li>
-      </ul>
-    </div>
--->
+              <div class="btn-group">
+                <a class="btn btn-default dropdown-toggle" title="Logging Mode" id="loggingMenu" data-toggle="dropdown" href="#">Normal <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#" onclick="setLogging('Normal')">Normal</a></li>
+                  <li><a href="#" onclick="setLogging('File')">File</a></li>
+                  <li><a href="#" onclick="setLogging('TV Off')">TV Off</a></li>
+                </ul>
+              </div>
+    -->
 
-          <!--					<button type=" button " class=" btn btn-default
-      " data-dismiss=" modal ">Close</button>-->
-          <button type=" button " class=" btn btn-default " onclick="
-      clearDebugModal() ">Clear</button>
-          <button type=" button " class=" btn btn-default " onclick="
-      closeDebugModal() ">Close</button>
-          <!--					<button type=" button " class=" btn btn-default " onclick="
-      refreshDebug() ">Refresh</button>-->
+          <!--					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+          <button type="button" class="btn btn-default" onclick="clearDebugModal()">Clear</button>
+          <button type="button" class="btn btn-default" onclick="closeDebugModal()">Close</button>
+          <!--					<button type="button" class="btn btn-default" onclick="refreshDebug()">Refresh</button>-->
         </div>
       </div>
     </div>
   </div>
 
   <!-- Settings & Status Modal -->
-  <div id="
-      settingsModal " class=" modal " role=" dialog ">
-    <div class=" modal-dialog ">
+  <div id="settingsModal" class="modal" role="dialog">
+    <div class="modal-dialog">
 
-      <div class=" modal-content
-      ">
-        <div class=" modal-header ">
-          <h4 class=" modal-title
-      ">Settings & Status</h4><br />
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Settings & Status</h4><br />
         </div>
-        <div class=" modal-body ">
-          <div id=" settingsBody
-      ">
+        <div class="modal-body">
+          <div id="settingsBody">
 
           </div>
 
-          <table class=" table ">
+          <table class="table">
             <tbody>
 
               <!--							<tr>
-          <td>
-            <a class="
-      btn btn-default btn-block " href=" # " data-toggle=" tooltip " title=" Random Play On/Off " onclick="
-      randomToggle() "><span id=" randomIcon " class=" glyphicon glyphicon-random
-      " ></span></a>
-          </td>
-          <td class=" col-sm-10
-      " >Random On/Off</td>
-        </tr>
--->
+                    <td>
+                      <a class="btn btn-default btn-block" href="#" data-toggle="tooltip" title="Random Play On/Off" onclick="randomToggle()"><span id="randomIcon" class="glyphicon glyphicon-random" ></span></a>
+                    </td>
+                    <td class="col-sm-10" >Random On/Off</td>
+                  </tr>
+    -->
               <tr>
                 <td>
-                  <a class=" btn btn-default
-      btn-block " href=" # " data-toggle=" tooltip " title=" Alpha Sort On/Off "
-                    onclick=" alphaToggle() "><span id="
-      alphaIcon " class=" glyphicon glyphicon-sort-by-alphabet "></span></a>
+                  <a class="btn btn-default btn-block" href="#" data-toggle="tooltip" title="Alpha Sort On/Off" onclick="alphaToggle()"><span
+                      id="alphaIcon" class="glyphicon glyphicon-sort-by-alphabet"></span></a>
                 </td>
-                <td class="
-      col-sm-10
-      ">Alphanumeric Sorting On/Off</td>
+                <td class="col-sm-10">Alphanumeric Sorting On/Off</td>
               </tr>
 
               <tr>
                 <td>
-                  <div class="
-      btn-group ">
-                    <a class=" btn btn-default dropdown-toggle " title=" Compression Mode " id="
-      compressionMenu "
-                      data-toggle=" dropdown " href=" # ">FLAC <span class=" caret
-      "></span></a>
-                    <ul class=" dropdown-menu ">
-                      <li><a href=" # " onclick="
-      setCompression( 'FLAC' ) ">FLAC</a></li>
-                      <li><a href=" # " onclick=" setCompression( 'MP3' )
-      ">MP3</a></li>
-                      <li><a href=" # " onclick=" setCompression( 'None' )
-      ">None</a></li>
+                  <div class="btn-group">
+                    <a class="btn btn-default dropdown-toggle" title="Compression Mode" id="compressionMenu"
+                      data-toggle="dropdown" href="#">FLAC <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#" onclick="setCompression('FLAC')">FLAC</a></li>
+                      <li><a href="#" onclick="setCompression('MP3')">MP3</a></li>
+                      <li><a href="#" onclick="setCompression('None')">None</a></li>
                     </ul>
                   </div>
                 </td>
-                <td class="
-      col-sm-10 ">Compression Mode</td>
+                <td class="col-sm-10">Compression Mode</td>
               </tr>
 
               <tr>
                 <td>
-                  <div class=" btn-group
-      ">
-                    <a class=" btn btn-default dropdown-toggle " title=" Segue Mode " id=" segueMenu " data-toggle="
-      dropdown "
-                      href=" # ">Off <span class=" caret "></span></a>
-                    <ul class=" dropdown-menu
-      ">
-                      <li><a href=" # " onclick=" setSegue( 'Off' ) ">Off</a></li>
-                      <li><a href=" #
-      " onclick=" setSegue( 'On' ) ">On</a></li>
-                      <li><a href=" # " onclick=" setSegue( 'Short' )
-      ">Short</a></li>
+                  <div class="btn-group">
+                    <a class="btn btn-default dropdown-toggle" title="Segue Mode" id="segueMenu" data-toggle="dropdown"
+                      href="#">Off <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#" onclick="setSegue('Off')">Off</a></li>
+                      <li><a href="#" onclick="setSegue('On')">On</a></li>
+                      <li><a href="#" onclick="setSegue('Short')">Short</a></li>
                     </ul>
                   </div>
                 </td>
-                <td class="
-      col-sm-10 ">Segue Mode</td>
+                <td class="col-sm-10">Segue Mode</td>
               </tr>
 
               <tr>
                 <td>
-                  <a class=" btn btn-default
-      btn-block " href=" # " data-toggle=" tooltip " title=" Scan Disk "
-                    onclick=" scanDisk()
-      ">Scan</a>
+                  <a class="btn btn-default btn-block" href="#" data-toggle="tooltip" title="Scan Disk" onclick="scanDisk()">Scan</a>
                 </td>
-                <td class=" col-sm-10
-      ">Scan Disk</td>
+                <td class="col-sm-10">Scan Disk</td>
               </tr>
               <!--							
-        <tr>
-          <td colspan=" 2 ">
-            <div class="
-      checkbox ">
-              <label>
-                <input type=" checkbox " id=" webMode " onclick="
-      webModeClick()
-      "> Force mobile mode - for screen readers
-              </label>
-            </div>
-          </td>
-        </tr>
--->
+                  <tr>
+                    <td colspan="2">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" id="webMode" onclick="webModeClick()"> Force mobile mode - for screen readers
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+    -->
               <tr>
-                <td colspan="
-      2 ">
-                  <div class=" radio ">
-                    <label><input onclick=" webModeClick() " type=" radio " id="
-      webModeAuto " name=" webMode "
-                        value=" normal " checked>Automatic</label>
-                    <label><input onclick="
-      webModeClick() " type=" radio " id=" webModeMobile " name=" webMode "
-                        value=" mobile
-      ">Force Mobile</label>
-                    <label><input onclick=" webModeClick() " type=" radio " id=" webModeDesktop
-      " name=" webMode "
-                        value=" desktop
-      ">Force Desktop</label>
+                <td colspan="2">
+                  <div class="radio">
+                    <label><input onclick="webModeClick()" type="radio" id="webModeAuto" name="webMode" value="normal"
+                        checked>Automatic</label>
+                    <label><input onclick="webModeClick()" type="radio" id="webModeMobile" name="webMode" value="mobile">Force
+                      Mobile</label>
+                    <label><input onclick="webModeClick()" type="radio" id="webModeDesktop" name="webMode" value="desktop">Force
+                      Desktop</label>
 
                   </div>
                 </td>
@@ -935,23 +926,18 @@
 
 
               <tr>
-                <td class="
-      col-sm-3 ">
-                  <div class=" checkbox ">
+                <td class="col-sm-3">
+                  <div class="checkbox">
                     <label>
-                      <input type=" checkbox
-      " id=" guestMode " onclick=" guestModeClick()
-      "> Guest Mode
+                      <input type="checkbox" id="guestMode" onclick="guestModeClick()"> Guest Mode
                     </label>
                   </div>
                 </td>
-                <td class=" col-sm-9
-      ">
-                  <div class=" btn-group ">
-                    <a class=" btn btn-default dropdown-toggle " id="
-      guestMenu " data-toggle=" dropdown " href=" # ">Red
-                      <span class=" caret"></span></a>
-                    <ul class=" dropdown-menu " id=" guestDropdownUl ">
+                <td class="col-sm-9">
+                  <div class="btn-group">
+                    <a class="btn btn-default dropdown-toggle" id="guestMenu" data-toggle="dropdown" href="#">Red
+                      <span class="caret"></span></a>
+                    <ul class="dropdown-menu" id="guestDropdownUl">
                       <li><a href="#">Red</a></li>
                       <li><a href="#">Orange</a></li>
                     </ul>
@@ -959,13 +945,10 @@
                 </td>
               </tr>
               <tr>
-                <td colspan="
-      2 ">
-                  <div class=" checkbox ">
+                <td colspan="2">
+                  <div class="checkbox">
                     <label>
-                      <input type=" checkbox " id="
-      tvUi " onclick=" tvUiClick()
-      "> Enable TV UI
+                      <input type="checkbox" id="tvUi" onclick="tvUiClick()"> Enable TV UI
                     </label>
                   </div>
                 </td>
@@ -974,7 +957,7 @@
                 <td colspan="2">
                   <div class="checkbox">
                     <label>
-                      <input type=" checkbox " id="hdmi" onclick="HDMIClick()"> Audio on HDMI (TV)
+                      <input type="checkbox" id="hdmi" onclick="HDMIClick()"> Audio on HDMI (TV)
                     </label>
                   </div>
                 </td>
@@ -991,72 +974,52 @@
 
               <tr>
                 <td>Background</td>
-                <td id="backgroundText " class=" col-sm-10"></td>
+                <td id="backgroundText" class="col-sm-10"></td>
               </tr>
 
             </tbody>
           </table>
+
+
         </div>
-        <!-- Buttons: Close, Debug, JBV -->
         <div class="modal-footer">
-          <button type=" button " class=" btn btn-default " data-dismiss=" modal">Close</button>
-          <!--
-          <button type=" button " class=" btn btn-default " onclick=" refreshSettings ()">Refresh</button>
-          -->
-          <!--
-          <button type=" button " class=" btn btn-default " onclick=" artTest ()">Art Test</button>
-          -->
-          <button type=" button " class=" btn btn-default " data-toggle=" tooltip " title="B2 Debug Window" onclick=" openDebugModal () "><span
-              class=" glyphicon glyphicon-wrench"></span></button>
-          <button type=" button " class=" btn btn-default " data-toggle=" tooltip " title="Bluetooth " onclick=" openBluetoothModal () "><span>Bluetooth</span></button>
-          <button type=" button " class=" btn btn-default " data-toggle=" tooltip " title=" B2 Image Viewer " onclick=" openJBV () "><span
-              class="glyphicon glyphicon-camera "></span></button>
-          <!--
-          <button type=" button " class=" btn btn-default" data-toggle=" tooltip " title=" Youtube " onclick=" openBTube () "><span class=" glyphicon glyphicon-film" ></span></button>
-          -->
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <!--					<button type="button" class="btn btn-default" onclick="refreshSettings ()">Refresh</button>-->
+          <!--					<button type="button" class="btn btn-default" onclick="artTest ()">Art Test</button>-->
+          <button type="button" class="btn btn-default" data-toggle="tooltip" title="B2 Debug Window" onclick="openDebugModal ()"><span
+              class="glyphicon glyphicon-wrench"></span></button>
+          <button type="button" class="btn btn-default" data-toggle="tooltip" title="Bluetooth" onclick="openBluetoothModal ()"><span>Bluetooth</span></button>
+          <button type="button" class="btn btn-default" data-toggle="tooltip" title="B2 Image Viewer" onclick="openJBV ()"><span
+              class="glyphicon glyphicon-camera"></span></button>
+          <!--					<button type="button" class="btn btn-default" data-toggle="tooltip" title="Youtube" onclick="openBTube ()"><span class="glyphicon glyphicon-film" ></span></button>-->
         </div>
       </div>
     </div>
   </div>
 
-</div>
-
-<!-- Bluetooth Modal -->
-<div id=" bluetoothModal
-      " class=" modal " role=" dialog ">
-  <div class=" modal-dialog ">
-
-    <div class=" modal-content ">
-      <div class="
-      modal-header ">
-        <h4 class=" modal-title ">Bluetooth <span id=" bluetoothBusy "><img src="assets/img/ajax-loader.gif"></span></h4><br />
-      </div>
-      <div class=" modal-body ">
-        <div id=" bluetoothBody">
-
+  <!-- Bluetooth Modal -->
+  <div id="bluetoothModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Bluetooth <span id="bluetoothBusy"><img src="assets/images/ajax-loader.gif"></span></h4><br />
         </div>
-        <a class=" btn btn-default " href=" # " data-toggle=" tooltip " title=" Update Paired Devices
-      " onclick=" listDevices() ">Refresh
-          Paired Devices</a>
-        <a class=" btn btn-default " href=" # " data-toggle="
-      tooltip " title=" Scan " onclick=" scanBluetooth() ">Scan
-          Bluetooth</a>
-        <a class=" btn btn-default " href=" #
-      " data-toggle=" tooltip " title=" Reset " onclick=" resetBluetooth1() ">Reset
-          Bluetooth</a>
-        <div class="
-      checkbox "><label>
-            <input id=" tandemBox " type=" checkbox " onclick=" tandemClick()
-      ">Bluetooth and wired speakers
-            together
-          </label></div>
+        <div class="modal-body">
+          <div id="bluetoothBody">
 
-      </div>
-      <div class=" modal-footer
-      ">
-        <button type=" button " class=" btn btn-default " onclick=" closeBluetoothModal ()
-      ">Close</button>
+          </div>
+          <a class="btn btn-default" href="#" data-toggle="tooltip" title="Update Paired Devices" onclick="listDevices()">Refresh Paired Devices</a>
+          <a class="btn btn-default" href="#" data-toggle="tooltip" title="Scan" onclick="scanBluetooth()">Scan Bluetooth</a>
+          <a class="btn btn-default" href="#" data-toggle="tooltip" title="Reset" onclick="resetBluetooth1()">Reset Bluetooth</a>
+          <div class="checkbox">
+            <label><input id="tandemBox" type="checkbox" onclick="tandemClick()">Bluetooth and wired speakers together</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" onclick="closeBluetoothModal ()">Close</button>
+        </div>
       </div>
     </div>
   </div>
+
 </div>
