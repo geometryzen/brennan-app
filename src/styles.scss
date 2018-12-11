@@ -1,0 +1,342 @@
+//
+// The following styles duplicate those that are inline in the original application style tag.
+//
+
+.well {
+    margin-bottom: 10px;
+}
+
+.ScrollBox {
+    position: relative;
+    height: 10em;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.SearchScrollBox {
+    position: relative;
+    height: 12em;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.vTunerScrollBox {
+    position: relative;
+    height: 10em;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.ArtistScrollBox {
+    position: relative;
+    /*	height: 12em;	*/
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.panelContentOld {
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid #3C4144;
+    border-radius: 4px;
+
+}
+
+.panelContent {
+    /*	margin-top: 10px; */
+    /*	padding-top: 10px; */
+    /*	border-top: 4px solid #003366; */
+    /*	border-top: 4px solid #3C4144; */
+
+}
+
+.topButtons {
+    margin-top: 5px;
+}
+
+.YoutubeScrollBox {
+    position: relative;
+    height: 24em;
+    overflow-y: scroll;
+    margin: 10px;
+    padding: 5px;
+    /*	
+        	overflow-y: hidden;
+        	overflow-x: hidden;
+        */
+}
+
+#YoutubeHistoryBox {
+    position: relative;
+    padding: 0px;
+}
+
+#YoutubeSearchResultsBox {
+    position: relative;
+    padding: 0px;
+}
+
+.USBScrollBox {
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#USBItemsBox {
+    position: relative;
+    padding: 0px;
+}
+
+.fit {
+    height: 20px;
+}
+
+#ArtistAlbumsBox {
+    position: relative;
+}
+
+#AlbumTracksBox {
+    position: relative;
+}
+
+#albumImage {
+    /*	max-height: 30px; */
+    max-width: 100%;
+}
+
+.panel {
+
+    margin-bottom: 0px;
+}
+
+.panel-body {
+
+    padding: 8px;
+}
+
+#mixText {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+#debugText {
+    font-family: monospace;
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#settingsBody p {
+    margin-bottom: 0px;
+}
+
+#settingsBody {
+    margin-bottom: 10px;
+}
+
+.npInline {
+    display: inline-block;
+
+}
+
+.w80 {
+    width: 78%;
+}
+
+.w20 {
+    width: 19%;
+}
+
+.top>* {
+    vertical-align: top;
+}
+
+.middle>* {
+    vertical-align: middle;
+}
+
+
+@media screen and (min-width: 990px) {
+
+    .ScrollBox {
+        position: relative;
+        height: 20em;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    .SearchScrollBox {
+        position: relative;
+        height: 48em;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    .vTunerScrollBox {
+        position: relative;
+        height: 20em;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    .ArtistScrollBox {
+        position: relative;
+        /*		height: 23em;	*/
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+}
+
+
+div[class^="col"] {
+    padding-left: 5px;
+    padding-right: 5px
+}
+
+@media (max-width: 990px) {
+
+    div[class^="col"] {
+        padding-left: 0px;
+        padding-right: 0px
+    }
+
+    .container-fluid {
+        padding-left: 0px;
+        padding-right: 0px
+    }
+
+    .panel {
+        margin-bottom: 0px;
+    }
+
+    .panel {
+        border: 0px
+    }
+
+    .panel-body {
+        padding-top: 5px;
+        padding-bottom: 5px
+    }
+
+    .well {
+        margin-bottom: 0px
+    }
+
+    .well-sm {
+        padding-top: 0px;
+        padding-bottom: 5px
+    }
+}
+
+.container-fluid {
+    max-width: 1400px;
+}
+
+.mobile-width {
+    max-width: 500px;
+}
+
+.myGrey {
+    color: #888;
+}
+
+.usbIcon {
+    color: #C80;
+}
+
+.youtubeIcon {
+    color: #C22;
+}
+
+.mylink {
+    cursor: pointer;
+}
+
+.breadcrumb {
+    margin-bottom: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*
+        ul.nav-pills {
+        	margin-bottom: 0.6em;
+        }	
+        */
+
+.scrollBoxHeader {
+    margin-bottom: 0.3em;
+}
+
+.topBorder {
+    border-style: solid;
+    border-width: 2px 0px 0px 0px;
+    border-colour: white;
+}
+
+#cdbox img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#canvasBox {
+    margin: 10px 0px 0px 0px;
+}
+/*
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.woff');
+}
+*/
+.icon-radioMast:before {
+    font-family: icomoon;
+    content: "\e600";
+}
+
+#volumeSlider {
+    margin: 1em;
+}
+
+.navbar-right {
+    margin-right: 0px;
+}
+
+.btn-group-right {
+    margin-top: 6px;
+    margin-right: 6px;
+}
+
+.nomargin {
+    margin: 0px;
+}
+
+.spaceForScrollbar {
+    padding-right: 32px !important;
+}
+
+.youtube>td {
+    padding: 4px !important;
+}
+
+.youtube>tr {
+    padding-right: 10px !important;
+}
+
+.leftjustified {
+    text-align: left;
+}
+
+
+#albumArtModal td {
+    border: 0px;
+}
+
+#albumArtModal .modal-body {
+    padding: 5px;
+}
+
+//
+// Emd of inline styles from original application.
+//
