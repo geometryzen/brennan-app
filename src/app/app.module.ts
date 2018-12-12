@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgbTabsetModule } from '@ng-bootstrap/ng-bootstrap'
+import { HttpClientModule } from '@angular/common/http';
+import { NgbTabsetModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NowPlayingComponent } from './now-playing/now-playing.component';
 
 import { SearchPanelComponent } from './search/search-panel.component';
+import { SearchResultsComponent } from './search/results.component';
 import { SearchHardDriveComponent } from './search/search-hdd.component';
 import { VTunerComponent } from './vtuner/vtuner.component';
 import { YouTubeComponent } from './youtube/youtube.component';
@@ -25,6 +27,7 @@ import { UploadComponent } from './upload/upload.component';
     NowPlayingComponent,
 
     SearchPanelComponent,
+    SearchResultsComponent,
     SearchHardDriveComponent,
     VTunerComponent,
     YouTubeComponent,
@@ -40,6 +43,7 @@ import { UploadComponent } from './upload/upload.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgbTabsetModule
   ],
   providers: [],
