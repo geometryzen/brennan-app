@@ -1,0 +1,14 @@
+<table class="table table-hover">
+    <tbody id="Results">
+        <tr *ngFor="let result of results; let i = index;" tabindex="-1" class="mylink">
+            <td><span class="glyphicon glyphicon-play" (click)="onPlay(result)"></span></td>
+            <td class="col-sm-10" draggable="true" ondragstart="dragSearchItem(event)" (dblclick)="onRename(result)"
+                (click)="onSelect(result)">
+                <span class="glyphicon glyphicon-user"></span>&nbsp;{{result.artist}}
+            </td>
+            <td>
+                <span class="glyphicon glyphicon-option-horizontal" (click)="onOptions(result)"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
