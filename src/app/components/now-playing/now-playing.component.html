@@ -17,8 +17,21 @@
               </div>
             -->
             <div class="panel-body">
-                <div class="npInline col-sm-8" id="nowPlayingBody"></div>
-                <div class="npInline col-sm-4" id="nowPlayingArt"><img src="assets/images/noimage.jpg" width="100%"></div>
+                <div class="npInline col-sm-8" id="nowPlayingBody">
+                    <h6 class="mylink" draggable="true" ondragstart="dragNowPlayingTrack (event)" onclick="nowPlayingTrackClick()">
+                        <span class="glyphicon glyphicon-music"></span>&nbsp;{{track}}
+                    </h6>
+                    <h6 class="mylink" draggable="true" ondragstart="dragNowPlayingArtist (event)" onclick="nowPlayingArtistClick()">
+                        <span class="glyphicon glyphicon-user"></span>&nbsp;{{artist}}
+                    </h6>
+                    <h6 class="mylink" draggable="true" ondragstart="dragNowPlayingAlbum (event)" onclick="nowPlayingAlbumClick()">
+                        <span class="glyphicon glyphicon-cd"></span>&nbsp;{{album}}
+                    </h6>
+                    <h6 id="timeLeft">Time left:&nbsp;{{timeLeft}}</h6>
+                </div>
+                <div class="npInline col-sm-4" id="nowPlayingArt">
+                    <img src="assets/images/noimage.jpg" width="100%">
+                </div>
             </div>
             <!--
               <div class="panel-body">

@@ -1,4 +1,4 @@
-export class SearchResult {
+export class BrennanItem {
     id: number;
     artist: string;
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchResult } from '../../models/search-result';
+import { BrennanItem } from '../../services/brennan-item';
 import { BrennanService } from '../../services/brennan.service';
 
 @Component({
@@ -10,8 +10,8 @@ import { BrennanService } from '../../services/brennan.service';
 
 export class SearchResultsComponent implements OnInit {
 
-    results: SearchResult[];
-    selectedResult: SearchResult;
+    results: BrennanItem[];
+    selectedResult: BrennanItem;
 
     constructor(private brennanService: BrennanService) { }
 
@@ -23,20 +23,24 @@ export class SearchResultsComponent implements OnInit {
         this.getSearchResults()
     }
 
-    onOptions(result: SearchResult): void {
+    onOptions(result: BrennanItem): void {
         console.log(`Options: ${result.id} ${result.artist} `);
     }
 
-    onPlay(result: SearchResult): void {
+    onPlay(result: BrennanItem): void {
         console.log(`Play: ${result.id} ${result.artist} `);
-        this.brennanService.play(result.id).subscribe((response) => { console.log(response) });
+        this.brennanService.play(result.id).subscribe(
+            (response) => { console.log(response) },
+            (err) => { console.log("Play error") },
+            () => { console.log("Play complete") });
+        this.brennanService.status().subscribe((status) => { console.log(status) });
     }
 
-    onRename(result: SearchResult): void {
+    onRename(result: BrennanItem): void {
         console.log(`Rename: ${result.id} ${result.artist} `);
     }
 
-    onSelect(result: SearchResult): void {
+    onSelect(result: BrennanItem): void {
         console.log(`Select: ${result.id} ${result.artist} `);
         this.selectedResult = result;
     }

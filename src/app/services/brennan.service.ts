@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 
-import { SearchResult } from '../models/search-result';
+import { BrennanItem } from './brennan-item';
+import { BrennanStatus } from './brennan-status';
 
 @Injectable({
     providedIn: 'root',
@@ -19,7 +20,12 @@ export class BrennanService {
         return this.http.get(url, { responseType: 'text' })
     }
 
-    search(): Observable<SearchResult[]> {
-        return this.http.get<SearchResult[]>(`${this.baseURL}?search&artists=Y&count=100`)
+    search(): Observable<BrennanItem[]> {
+        return this.http.get<BrennanItem[]>(`${this.baseURL}?search&artists=Y&count=100`)
+    }
+
+    status(): Observable<BrennanStatus> {
+        const url = `${this.baseURL}?status&${Date.now()}`
+        return this.http.get<BrennanStatus>(url, { responseType: 'json' })
     }
 }
