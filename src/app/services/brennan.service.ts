@@ -15,6 +15,11 @@ export class BrennanService {
 
     constructor(private http: HttpClient) { }
 
+    getCurrentArt(): Observable<Blob> {
+        const url = `${this.baseURL}?getCurrentArt&time=${Date.now()}`
+        return this.http.get(url, { responseType: 'blob' })
+    }
+
     play(id: number): Observable<string> {
         const url = `${this.baseURL}?playID&${id}&${Date.now()}`
         return this.http.get(url, { responseType: 'text' })

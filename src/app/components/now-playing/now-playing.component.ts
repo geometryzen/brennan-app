@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Observable, interval } from 'rxjs';
 import { BrennanService } from 'src/app/services/brennan.service';
+
 // import 'rxjs/add/observable/interval';
+// import 'rxjs/add/operator/takeWhile';
 
 const delay = 500; // every 0.5 sec
 
@@ -26,6 +28,10 @@ export class NowPlayingComponent implements OnInit {
     album = ""
     timeLeft = ""
 
+    @ViewChild("currentArt") currentArt: ElementRef;
+
+    private _window: Window;
+
     ngOnInit() {
         interval(delay).subscribe((n) => {
             this.brennanService.status().subscribe(status => {
@@ -33,6 +39,10 @@ export class NowPlayingComponent implements OnInit {
                 this.artist = status.artist
                 this.album = status.album
                 this.timeLeft = formatTimeLeft(parseInt(status.timeLeft))
+
+                this.brennanService.getCurrentArt().subscribe(image => {
+                    this.currentArt.nativeElement.src = window.URL.createObjectURL(image);
+                })
             })
         });
     }
