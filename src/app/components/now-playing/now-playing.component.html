@@ -1,8 +1,11 @@
 <div id="nowPlayingWell" class="well well-sm" ondragover="allowDrop(event)" ondrop="dropSpeaker(event)">
     <!--	<a class="col-sm-2 btn btn-default" href="#" title="Random On Off" onclick="randomToggle()"><span id="randomIcon" class="glyphicon glyphicon-random" ></span></a>-->
     <ul tabindex="-1" id="t1" class="nav nav-pills nav-stacked scrollBoxHeader">
-        <li id="t2"><a class="col-sm-10" id="t3"><span class="text-muted">Source </span><span id="sourceHeader">Hard
-                    Disk</span></a>
+        <li id="t2">
+            <a class="col-sm-10" id="t3">
+                <span class="text-muted">Source&nbsp;</span>
+                <span id="sourceHeader">{{source}}&nbsp;{{playing | playingToText}}</span>
+            </a>
             <a id="settingsButton" tabindex="-1" class="col-sm-2 btn btn-default" href="#" title="Settings & Status"
                 role="button" onclick="openSettingsModal()"><span class="glyphicon glyphicon-cog"></span></a>
         </li>
@@ -43,14 +46,21 @@
 
         <!-- CD Control Buttons -->
         <div class="btn-group btn-group-justified">
-            <a href="#" class="btn btn-default" data-toggle="tooltip" title="Tone Control" onclick="openToneControl ()"><span
-                    class="glyphicon glyphicon-music"></span></a>
-            <a class="btn btn-default btn-block" href="#" data-toggle="tooltip" title="Random Play On/Off" onclick="randomToggle()"><span
-                    id="randomIcon" class="glyphicon glyphicon-random"></span></a>
-            <a href="#" class="transportButton btn btn-default" title="Back button" value='back'><span class="glyphicon glyphicon-backward"></span></a>
-            <a href="#" class="transportButton btn btn-default" title="Play Stop button" value='play' id="playbutton"><span
-                    class="glyphicon glyphicon-play"></span></a>
-            <a href="#" class="transportButton btn btn-default" title="Next button" value='next'><span class="glyphicon glyphicon-forward"></span></a>
+            <a href="#" class="btn btn-default" data-toggle="tooltip" title="Tone Control" onclick="openToneControl ()">
+                <span class="glyphicon glyphicon-music"></span>
+            </a>
+            <a class="btn btn-default btn-block" href="#" data-toggle="tooltip" title="Random Play On/Off" onclick="randomToggle()">
+                <span id="randomIcon" class="glyphicon glyphicon-random"></span>
+            </a>
+            <a href="#" class="transportButton btn btn-default" title="Back button" (click)="onBack()">
+                <span class="glyphicon glyphicon-backward"></span>
+            </a>
+            <a href="#" class="transportButton btn btn-default" title="Play Stop button" (click)="onPausePlay()">
+                <span class="{{playing | playingToClass}}"></span>
+            </a>
+            <a href="#" class="transportButton btn btn-default" title="Next button" (click)="onNext()">
+                <span class="glyphicon glyphicon-forward"></span>
+            </a>
         </div>
 
         <!-- Time Series -->

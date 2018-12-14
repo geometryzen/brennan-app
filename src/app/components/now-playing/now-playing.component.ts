@@ -27,6 +27,8 @@ export class NowPlayingComponent implements OnInit {
     artist = ""
     album = ""
     timeLeft = ""
+    playing = -1
+    source = ""
 
     @ViewChild("currentArt") currentArt: ElementRef;
 
@@ -39,11 +41,28 @@ export class NowPlayingComponent implements OnInit {
                 this.artist = status.artist
                 this.album = status.album
                 this.timeLeft = formatTimeLeft(parseInt(status.timeLeft))
+                this.playing = status.playing
+                this.source = status.source
+
+                // console.log(status)
+
 
                 this.brennanService.getCurrentArt().subscribe(image => {
                     this.currentArt.nativeElement.src = window.URL.createObjectURL(image);
                 })
             })
         });
+    }
+
+    onBack() {
+        this.brennanService.back().subscribe((response) => { })
+    }
+
+    onPausePlay() {
+        this.brennanService.play().subscribe((response) => { })
+    }
+
+    onNext() {
+        this.brennanService.next().subscribe((response) => { })
     }
 }

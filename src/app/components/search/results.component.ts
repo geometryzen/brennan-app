@@ -29,7 +29,7 @@ export class SearchResultsComponent implements OnInit {
 
     onPlay(result: BrennanItem): void {
         console.log(`Play: ${result.id} ${result.artist} `);
-        this.brennanService.play(result.id).subscribe(
+        this.brennanService.playID(result.id).subscribe(
             (response) => { console.log(response) },
             (err) => { console.log("Play error") },
             () => { console.log("Play complete") });

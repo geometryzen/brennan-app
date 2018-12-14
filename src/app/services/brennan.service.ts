@@ -6,6 +6,10 @@ import { Observable, of } from 'rxjs';
 import { BrennanItem } from './brennan-item';
 import { BrennanStatus } from './brennan-status';
 
+function appendTimeNow(url: string): string {
+    return `${url}&time=${Date.now()}`
+}
+
 @Injectable({
     providedIn: 'root',
 })
@@ -15,12 +19,27 @@ export class BrennanService {
 
     constructor(private http: HttpClient) { }
 
+    back(): Observable<string> {
+        const url = appendTimeNow(`${this.baseURL}?back`)
+        return this.http.get(url, { responseType: 'text' })
+    }
+
     getCurrentArt(): Observable<Blob> {
-        const url = `${this.baseURL}?getCurrentArt&time=${Date.now()}`
+        const url = appendTimeNow(`${this.baseURL}?getCurrentArt`)
         return this.http.get(url, { responseType: 'blob' })
     }
 
-    play(id: number): Observable<string> {
+    next(): Observable<string> {
+        const url = appendTimeNow(`${this.baseURL}?next`);
+        return this.http.get(url, { responseType: 'text' })
+    }
+
+    play(): Observable<string> {
+        const url = appendTimeNow(`${this.baseURL}?play`);
+        return this.http.get(url, { responseType: 'text' })
+    }
+
+    playID(id: number): Observable<string> {
         const url = `${this.baseURL}?playID&${id}&${Date.now()}`
         return this.http.get(url, { responseType: 'text' })
     }
