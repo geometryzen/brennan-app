@@ -13,7 +13,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+### Getting the code and install dependencies
+
 Clone this repository, `cd` into the `brennan-app` folder and run the usual `npm install`.
+
+### CORS policy workaround
 
 Note: In order for the developent server to communicate with the brennan web service, it is neccessary to first modify the `lighttpd.conf` file in `/var/www` to support CORS. This should not be necessary in a production deployment of this web application. The root folder of this project contains an example `lighttpd.conf` file to do this and which can be copied to the brennan `/var/www` folder. The brennan web server must be re-started.
 
@@ -43,8 +47,12 @@ killall lighttpd
 lighttpd -D -f /var/www/lighttpd.conf
 ```
 
+### Launching this Web Application server locally
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 You can also run `ng serve --open`, which will automatically open the browser.
+
+### Editing
 
 I recommend using the excellent (and free) Visual Studio Code editor fo development work.
 
