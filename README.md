@@ -15,14 +15,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Clone this repository, `cd` into the `brenna-app` folder and run the usual `npm install`. I recommend using the excellent (and free) Visual Studio Code editor.
 
-Note: In order for the developent server to communicate with the brennan web service, it is neccessary to first modify the `lighttpd.conf` file in `/var/www` to support CORS. This should not be necessary in a production deployment of this web application.
+Note: In order for the developent server to communicate with the brennan web service, it is neccessary to first modify the `lighttpd.conf` file in `/var/www` to support CORS. This should not be necessary in a production deployment of this web application. The root folder of this project contains an example `lighttpd.conf` file to do this and which can be copied to the brennan `/var/www` folder. The brennan web server must be re-started.
+
+The copy can be performed with the following command from the `brennan-app` folder. When propted for a password, type `brennan`.
+
+```
+scp lighttpd.conf root@192.168.0.12:/var/www
+```
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 You can also run `ng serve --open`, which will automatically open the browser.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
