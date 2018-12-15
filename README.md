@@ -1,6 +1,6 @@
 # BrennanApp
 
-This is an experiment in creating a web applicaton for the brennan b2 using more modern technology.
+This is an experiment in creating a web applicaton for the brennan b2 [brennan](https://www.brennan.co.uk/) using more modern technology.
 
 The brennan b2 web application tooling is currently HTML, JavaScript, and JQuery. This is the application that currently ships with the b2.
 
