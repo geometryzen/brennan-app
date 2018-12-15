@@ -28,6 +28,7 @@ export class NowPlayingComponent implements OnInit {
     album = ""
     timeLeft = ""
     playing = -1
+    random: boolean = false
     source = ""
     volume = 32 // 0..64
 
@@ -46,6 +47,7 @@ export class NowPlayingComponent implements OnInit {
                 this.playing = status.playing
                 this.source = status.source
                 this.volume = parseInt(status.volume)
+                this.random = parseInt(status.random) == 1
 
                 // console.log(status)
 
@@ -74,5 +76,9 @@ export class NowPlayingComponent implements OnInit {
     }
 
     onChangeVolume() {
+    }
+
+    onRandomToggle() {
+        this.brennanService.setRandom(!this.random).subscribe(() => { })
     }
 }

@@ -38,8 +38,8 @@
             <a href="#" class="btn btn-default" data-toggle="tooltip" title="Tone Control" onclick="openToneControl ()">
                 <span class="glyphicon glyphicon-music"></span>
             </a>
-            <a class="btn btn-default btn-block" href="#" data-toggle="tooltip" title="Random Play On/Off" onclick="randomToggle()">
-                <span id="randomIcon" class="glyphicon glyphicon-random"></span>
+            <a class="btn btn-default btn-block" href="#" data-toggle="tooltip" title="Random Play On/Off" (click)="onRandomToggle()">
+                <span id="randomIcon" class="{{random | randomToClass}}"></span>
             </a>
             <a href="#" class="transportButton btn btn-default" title="Back button" (click)="onBack()">
                 <span class="glyphicon glyphicon-backward"></span>

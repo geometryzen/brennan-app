@@ -8,6 +8,7 @@ import { AppComponent } from './components/app/app.component';
 import { NowPlayingComponent } from './components/now-playing/now-playing.component';
 import { PlayingToClassPipe } from './components/now-playing/playing-to-class.pipe';
 import { PlayingToTextPipe } from './components/now-playing/playing-to-text.pipe';
+import { RandomToClassPipe } from './components/now-playing/random-to-class.pipe';
 
 import { SearchPanelComponent } from './components/search/search-panel.component';
 import { SearchResultsComponent } from './components/search/results.component';
@@ -31,6 +32,7 @@ import { UploadComponent } from './components/upload/upload.component';
     NowPlayingComponent,
     PlayingToClassPipe,
     PlayingToTextPipe,
+    RandomToClassPipe,
 
     SearchPanelComponent,
     SearchResultsComponent,

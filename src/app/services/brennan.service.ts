@@ -48,6 +48,12 @@ export class BrennanService {
         return this.http.get<BrennanItem[]>(`${this.baseURL}?search&artists=Y&count=100`)
     }
 
+    setRandom(random: boolean): Observable<string> {
+        const r = random ? 1 : 0;
+        const url = appendTimeNow(`${this.baseURL}?setRandom&random=${r}`)
+        return this.http.get(url, { responseType: 'text' })
+    }
+
     status(): Observable<BrennanStatus> {
         const url = `${this.baseURL}?status&${Date.now()}`
         return this.http.get<BrennanStatus>(url, { responseType: 'json' })
