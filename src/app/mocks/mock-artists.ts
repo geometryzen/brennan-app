@@ -1,4 +1,4 @@
-import { BrennanItem } from '../services/brennan-item';
+import { BrennanItem } from '../services/brennan/brennan-item';
 
 export const RESULTS: BrennanItem[] = [
     { id: 11, artist: '10,000 Maniacs' },

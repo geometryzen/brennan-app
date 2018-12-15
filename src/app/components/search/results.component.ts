@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BrennanItem } from '../../services/brennan-item';
-import { BrennanService } from '../../services/brennan.service';
+import { BrennanItem } from '../../services/brennan/brennan-item';
+import { BrennanService } from '../../services/brennan/brennan.service';
 
 @Component({
     selector: 'brennan-search-results',

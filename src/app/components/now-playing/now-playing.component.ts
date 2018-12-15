@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Observable, interval } from 'rxjs';
-import { BrennanService } from 'src/app/services/brennan.service';
+import { BrennanService } from 'src/app/services/brennan/brennan.service';
 
 // import 'rxjs/add/observable/interval';
 // import 'rxjs/add/operator/takeWhile';
