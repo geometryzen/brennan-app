@@ -1,10 +1,10 @@
 # BrennanApp
 
-This is an experiment in creating a web applicaton for the brennan b2 [brennan](https://www.brennan.co.uk/) using more modern technology.
+This is an experiment in creating a web applicaton for the [brennan](https://www.brennan.co.uk/) b2 using more modern technology.
 
 The brennan b2 web application tooling is currently HTML, JavaScript, and JQuery. This is the application that currently ships with the b2.
 
-This application uses the Angular (not AngularJS) framework, and the TypeScript language. The Angular framework is very complete, efficient, and leads to a very modular application design with clear separation of concerns. The TypeScript language compiles to JavaScript for execution and provides excellent type-safety allowing the application to scale by not becoming cognatively unmanageable.
+This application uses the [Angular](https://angular.io/) (not AngularJS) framework developed by Google, and the [TypeScript](https://www.typescriptlang.org/) language developed by Microsoft. The Angular framework is very complete, efficient, and leads to a very modular application design with clear separation of concerns. The TypeScript language compiles to JavaScript for execution and provides excellent type-safety allowing the application to scale by not becoming cognatively unmanageable.
 It is hoped that this will result in a software architecture that is more robust, more maintainable, and that can more rapidly evolve to new features.
 
 For the time being, the principles and scope of this project are aligned toward replicating the existing functionality and appearance of the original web application. 
