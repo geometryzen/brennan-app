@@ -23,6 +23,20 @@ The copy can be performed with the following command from the `brennan-app` fold
 scp lighttpd.conf root@192.168.0.12:/var/www
 ```
 
+To stop and start the brennan application:
+
+```
+ssh root@192.168.0.12
+```
+
+```
+killall lighttpd
+```
+
+```
+lighttpd -D -f /var/www/lighttpd.conf
+```
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 You can also run `ng serve --open`, which will automatically open the browser.
 
