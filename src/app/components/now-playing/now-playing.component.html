@@ -14,11 +14,6 @@
 
         <!-- Now Playing Information -->
         <div class="panel panel-default" data-toggle="tooltip" title="Drag items here to Play">
-            <!--
-              <div class="panel-body" id="nowPlayingBody">
-         
-              </div>
-            -->
             <div class="panel-body">
                 <div class="npInline col-sm-8" id="nowPlayingBody">
                     <h6 class="mylink" draggable="true" ondragstart="dragNowPlayingTrack (event)" onclick="nowPlayingTrackClick()">
@@ -36,12 +31,6 @@
                     <img #currentArt src="assets/images/noimage.jpg" width="100%">
                 </div>
             </div>
-            <!--
-              <div class="panel-body">
-                <div class="npInline" id="nowPlayingBody"></div>
-                <div class="npInline" id="nowPlayingArt"></div>
-              </div>
-            -->
         </div>
 
         <!-- CD Control Buttons -->
@@ -71,9 +60,7 @@
         <!-- Volume Control Slider -->
         <div class="panel panel-default" data-toggle="tooltip" title="Drag items here to Play">
             <div id="volumeSlider">
-                <!--					<input type="range" name="slider-1" id="slider-1" class="danielstern" min="0" max="64" value="32">-->
-                <input type="range" title="Volume" name="slider-1" id="slider-1" class="danielstern" min="0" max="64"
-                    value="32">
+                <input #volumeInput type="range" title="Volume" min="0" max="64" value="{{volume}}" (input)="onInputVolume()" (change)="onChangeVolume()">
             </div>
         </div>
     </div>

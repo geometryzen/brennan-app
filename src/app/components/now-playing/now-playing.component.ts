@@ -29,8 +29,10 @@ export class NowPlayingComponent implements OnInit {
     timeLeft = ""
     playing = -1
     source = ""
+    volume = 32 // 0..64
 
-    @ViewChild("currentArt") currentArt: ElementRef;
+    @ViewChild("currentArt") currentArt: ElementRef<HTMLImageElement>;
+    @ViewChild("volumeInput") volumeInput: ElementRef<HTMLInputElement>;
 
     private _window: Window;
 
@@ -43,6 +45,7 @@ export class NowPlayingComponent implements OnInit {
                 this.timeLeft = formatTimeLeft(parseInt(status.timeLeft))
                 this.playing = status.playing
                 this.source = status.source
+                this.volume = parseInt(status.volume)
 
                 // console.log(status)
 
@@ -64,5 +67,12 @@ export class NowPlayingComponent implements OnInit {
 
     onNext() {
         this.brennanService.next().subscribe((response) => { })
+    }
+
+    onInputVolume() {
+        this.brennanService.vol(parseInt(this.volumeInput.nativeElement.value)).subscribe(() => { })
+    }
+
+    onChangeVolume() {
     }
 }

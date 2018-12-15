@@ -52,4 +52,9 @@ export class BrennanService {
         const url = `${this.baseURL}?status&${Date.now()}`
         return this.http.get<BrennanStatus>(url, { responseType: 'json' })
     }
+
+    vol(value: number): Observable<string> {
+        const url = appendTimeNow(`${this.baseURL}?vol${value}`)
+        return this.http.get(url, { responseType: 'text' })
+    }
 }
