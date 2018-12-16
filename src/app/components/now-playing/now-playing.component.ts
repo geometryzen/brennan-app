@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Observable, interval } from 'rxjs';
 import { BrennanService } from 'src/app/services/brennan/brennan.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToneModalComponent } from 'src/app/dialogs/tone/tone-modal.component';
 
 const delay = 500; // every 0.5 sec
 
@@ -18,7 +20,7 @@ function formatTimeLeft(seconds: number): string {
 })
 export class NowPlayingComponent implements OnInit {
 
-    constructor(private brennanService: BrennanService) { }
+    constructor(private brennanService: BrennanService, private modalService: NgbModal) { }
 
     track = ""
     artist = ""
@@ -28,6 +30,8 @@ export class NowPlayingComponent implements OnInit {
     random: boolean = false
     source = ""
     volume = 32 // 0..64
+    bass: string
+    treble: string
 
     @ViewChild("currentArt") currentArt: ElementRef<HTMLImageElement>;
     @ViewChild("volumeInput") volumeInput: ElementRef<HTMLInputElement>;
@@ -39,18 +43,22 @@ export class NowPlayingComponent implements OnInit {
             this.brennanService.status().subscribe(status => {
                 this.track = status.track
                 this.artist = status.artist
-                this.album = status.album
                 this.timeLeft = formatTimeLeft(parseInt(status.timeLeft))
                 this.playing = status.playing
                 this.source = status.source
                 this.volume = parseInt(status.volume)
                 this.random = parseInt(status.random) == 1
+                this.bass = status.bass
+                this.treble = status.treble
 
                 // console.log(status)
 
-                this.brennanService.getCurrentArt().subscribe(image => {
-                    this.currentArt.nativeElement.src = window.URL.createObjectURL(image);
-                })
+                if (this.album != status.album) {
+                    this.brennanService.getCurrentArt().subscribe(image => {
+                        this.currentArt.nativeElement.src = window.URL.createObjectURL(image);
+                        this.album = status.album
+                    })
+                }
             })
         });
     }
@@ -76,5 +84,15 @@ export class NowPlayingComponent implements OnInit {
 
     onRandomToggle() {
         this.brennanService.setRandom(!this.random).subscribe(() => { })
+    }
+
+    onToneControl() {
+        console.log("onToneControl() bass=" + this.bass + " treble=" + this.treble);
+        const modalRef = this.modalService.open(ToneModalComponent);
+        modalRef.componentInstance.title = 'About';
+        // $('#toneModal').modal();			
+        // $("#bassSlider").val(nowPlaying.bass);
+        // $("#trebleSlider").val(nowPlaying.treble);
+
     }
 }

@@ -1,25 +1,12 @@
-<ngb-tabset [justify]="fill" type="pills">
-    <ngb-tab>
-        <ng-template ngbTabTitle>
-            <span class="glyphicon glyphicon-search"></span>
-        </ng-template>
-        <ng-template ngbTabContent>
-            <brennan-search-hdd></brennan-search-hdd>
-        </ng-template>
-    </ngb-tab>
-    <ngb-tab title="vTuner">
-        <ng-template ngbTabContent>
-            <brennan-vtuner></brennan-vtuner>
-        </ng-template>
-    </ngb-tab>
-    <ngb-tab title="YouTube">
-        <ng-template ngbTabContent>
-            <brennan-youtube></brennan-youtube>
-        </ng-template>
-    </ngb-tab>
-    <ngb-tab title="USB">
-        <ng-template ngbTabContent>
-            <brennan-usb></brennan-usb>
-        </ng-template>
-    </ngb-tab>
-</ngb-tabset>
+<div id="searchTabs" class="btn-group btn-group-justified">
+    <a id='SearchTab' class="btn btn-default" (click)="selectSearchSubPanel(0)">
+        <span class="glyphicon glyphicon-search"></span>
+    </a>
+    <a id='VTunerTab' class="btn btn-default" (click)="selectSearchSubPanel(1)">vTuner</a>
+    <a id='YoutubeTab' class="btn btn-default" (click)="selectSearchSubPanel(2)" data-toggle="tooltip" title="Experimental">Youtube*</a>
+    <a id='USBTab' class="btn btn-default" (click)="selectSearchSubPanel(3)">USB</a>
+</div>
+<brennan-search-hdd *ngIf='searchSubPanel == 0'></brennan-search-hdd>
+<brennan-vtuner *ngIf='searchSubPanel == 1'></brennan-vtuner>
+<brennan-youtube *ngIf='searchSubPanel == 2'></brennan-youtube>
+<brennan-usb *ngIf='searchSubPanel == 3'></brennan-usb>

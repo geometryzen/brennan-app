@@ -5,7 +5,7 @@ import { Observable, interval, Subscription } from 'rxjs';
 import { BrennanService } from 'src/app/services/brennan/brennan.service';
 import { ViewContainerData } from '@angular/core/src/view';
 
-const delayMillis = 500;
+const delayMillis = 200;
 
 @Directive({
     selector: '[brennan-smoothie]'
@@ -37,6 +37,7 @@ export class SmoothieDirective implements OnInit, OnDestroy {
             })
         });
         window.addEventListener('resize', this.resize, false)
+        this.resize()
     }
 
     ngOnDestroy() {

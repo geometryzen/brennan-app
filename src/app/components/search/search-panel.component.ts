@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
     styleUrls: ['./search-panel.component.scss']
 })
 export class SearchPanelComponent {
+
+    searchSubPanel = 0
+    
+    selectSearchSubPanel(searchSubPanel: number) {
+        this.searchSubPanel = searchSubPanel
+    }
 }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { NgbTabsetModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbActiveModal, NgbTabsetModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './components/app/app.component';
 
@@ -26,6 +26,7 @@ import { PresetsComponent } from './components/presets/presets.component';
 import { UploadComponent } from './components/upload/upload.component';
 
 import { SmoothieDirective } from './components/smoothie/smoothie.directive'
+import { ToneModalComponent } from './dialogs/tone/tone-modal.component';
 
 @NgModule({
   declarations: [
@@ -51,14 +52,26 @@ import { SmoothieDirective } from './components/smoothie/smoothie.directive'
     PresetsComponent,
     UploadComponent,
 
+    // Modals
+    ToneModalComponent,
+
+    // Directives
     SmoothieDirective
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgbTabsetModule
+    NgbTabsetModule,
+    NgbModule.forRoot()
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    NgbActiveModal
+  ],
+  bootstrap: [
+    AppComponent
+  ],
+  entryComponents: [
+    ToneModalComponent
+  ]
 })
 export class AppModule { }

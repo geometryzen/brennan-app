@@ -10,7 +10,7 @@
                 role="button" onclick="openSettingsModal()"><span class="glyphicon glyphicon-cog"></span></a>
         </li>
     </ul>
-    <div class="panelContent" id="nowPlayingPanel">
+    <div id="nowPlayingPanel">
 
         <!-- Now Playing Information -->
         <div class="panel panel-default" data-toggle="tooltip" title="Drag items here to Play">
@@ -35,19 +35,19 @@
 
         <!-- CD Control Buttons -->
         <div class="btn-group btn-group-justified">
-            <a href="#" class="btn btn-default" data-toggle="tooltip" title="Tone Control" onclick="openToneControl ()">
+            <a href="#" class="btn btn-default" data-toggle="tooltip" title="Tone Control" (click)="onToneControl()">
                 <span class="glyphicon glyphicon-music"></span>
             </a>
             <a class="btn btn-default btn-block" href="#" data-toggle="tooltip" title="Random Play On/Off" (click)="onRandomToggle()">
                 <span id="randomIcon" class="{{random | randomToClass}}"></span>
             </a>
-            <a href="#" class="transportButton btn btn-default" title="Back button" (click)="onBack()">
+            <a href="#" class="btn btn-default" title="Back button" (click)="onBack()">
                 <span class="glyphicon glyphicon-backward"></span>
             </a>
-            <a href="#" class="transportButton btn btn-default" title="Play Stop button" (click)="onPausePlay()">
+            <a href="#" class="btn btn-default" title="Play Stop button" (click)="onPausePlay()">
                 <span class="{{playing | playingToClass}}"></span>
             </a>
-            <a href="#" class="transportButton btn btn-default" title="Next button" (click)="onNext()">
+            <a href="#" class="btn btn-default" title="Next button" (click)="onNext()">
                 <span class="glyphicon glyphicon-forward"></span>
             </a>
         </div>

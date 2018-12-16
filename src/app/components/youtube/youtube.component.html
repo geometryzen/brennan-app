@@ -1,4 +1,4 @@
-<div id="YoutubePanel" class="panelContent tab-paneDGH">
+<div id="YoutubePanel" class="tab-paneDGH">
     <div class="input-group scrollBoxHeader topButtons" id="youtubeSearchBar">
         <div>
             <input id="bTubeSearchValue" onkeydown="if (event.keyCode == 13) youtubeGo ()" type="text" class="form-control"
@@ -11,9 +11,10 @@
         </div>
 
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading" id="youtubeSearchHeading">Search results <span id="youtubeSearching"> <img class="fit"
-                    src="assets/images/ajax-loader.gif"></span></div>
+    <div class="panel">
+        <div class="panel-heading" id="youtubeSearchHeading">Search results
+            <span id="youtubeSearching"><img class="fit" src="assets/images/ajax-loader.gif"></span>
+        </div>
         <div class="panel-body vTunerScrollBox" id="YoutubeSearchResultsBox">
             <table class="table table-hover">
                 <tbody id="youtubeSearchResultsTable"></tbody>

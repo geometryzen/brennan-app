@@ -1,22 +1,10 @@
-<ngb-tabset [justify]="fill" type="pills">
-    <ngb-tab title="Playlists">
-        <ng-template ngbTabContent>
-            <brennan-playlist-panel></brennan-playlist-panel>
-        </ng-template>
-    </ngb-tab>
-    <ngb-tab title="CD">
-        <ng-template ngbTabContent>
-            <brennan-disc></brennan-disc>
-        </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Presets">
-        <ng-template ngbTabContent>
-            <brennan-presets></brennan-presets>
-        </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Upload">
-        <ng-template ngbTabContent>
-            <brennan-upload></brennan-upload>
-        </ng-template>
-    </ngb-tab>
-</ngb-tabset>
+<div id="playlistTabs" class="btn-group btn-group-justified">
+    <a id='playlistTab' class="btn btn-default" (click)="onSelectSubPanel(0)">Playlists</a>
+    <a id='CDTab' class="btn btn-default" (click)="onSelectSubPanel(1)">CD</a>
+    <a id='PresetsTab' class="btn btn-default" (click)="onSelectSubPanel(2)">Presets</a>
+    <a id='UploadTab' class="btn btn-default" (click)="onSelectSubPanel(3)">Upload</a>
+</div>
+<brennan-playlist-panel *ngIf='subPanel == 0'></brennan-playlist-panel>
+<brennan-disc *ngIf='subPanel == 1'></brennan-disc>
+<brennan-presets *ngIf='subPanel == 2'></brennan-presets>
+<brennan-upload *ngIf='subPanel == 3'></brennan-upload>

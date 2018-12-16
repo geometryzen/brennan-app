@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h4 class="modal-title">Tone Control</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <h3>Bass</h3>
+    <input type="range" title="Bass" name="bassSlider" id="bassSlider" min="-6" max="6" value="0">
+    <h3>Treble</h3>
+    <input type="range" title="Treble" name="trebleSlider" id="trebleSlider" min="-6" max="6" value="0">
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="activeModal.close('Close click')">Close</button>
+</div>
