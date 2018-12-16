@@ -2,9 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Observable, interval } from 'rxjs';
 import { BrennanService } from 'src/app/services/brennan/brennan.service';
 
-// import 'rxjs/add/observable/interval';
-// import 'rxjs/add/operator/takeWhile';
-
 const delay = 500; // every 0.5 sec
 
 function formatTimeLeft(seconds: number): string {
@@ -50,7 +47,6 @@ export class NowPlayingComponent implements OnInit {
                 this.random = parseInt(status.random) == 1
 
                 // console.log(status)
-
 
                 this.brennanService.getCurrentArt().subscribe(image => {
                     this.currentArt.nativeElement.src = window.URL.createObjectURL(image);

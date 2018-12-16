@@ -8,7 +8,7 @@ export interface SmoothieOptions {
     minValue?: number;
 
     timestampFormatter?: (dateTime: Date) => string;
-    yRangeFunction?: () => {}
+    yRangeFunction?: (range: { min: number; max: number }) => { min: number; max: number }
 
 
     millisPerPixel: number;
@@ -122,7 +122,7 @@ const AnimateCompatibility = (function () {
 })();
 
 
-export class SmothieChart {
+export class SmoothieChart {
     canvas: HTMLCanvasElement;
     delay: number;
     options: SmoothieOptions;
@@ -187,7 +187,7 @@ export class SmothieChart {
      *
      * @constructor
      */
-    constructor(options: SmoothieOptions) {
+    constructor(options: { maxValue: number; minValue: number }) {
         this.options = extend({}, defaultChartOptions, options);
         this.seriesSet = [];
         this.currentValueRange = 1;
@@ -208,7 +208,7 @@ export class SmothieChart {
      * }
      * </pre>
      */
-    addTimeSeries(timeSeries: TimeSeries, options: SeriesPresentationOptions) {
+    addTimeSeries(timeSeries: TimeSeries, options?: SeriesPresentationOptions) {
         this.seriesSet.push({ timeSeries: timeSeries, options: extend({}, defaultSeriesPresentationOptions, options) });
         if (timeSeries.options.resetBounds && timeSeries.options.resetBoundsInterval > 0) {
             timeSeries.resetBoundsTimerId = window.setInterval(
@@ -223,7 +223,7 @@ export class SmothieChart {
     /**
      * Removes the specified <code>TimeSeries</code> from the chart.
      */
-    removeTimeSeries(timeSeries) {
+    removeTimeSeries(timeSeries: TimeSeries) {
         // Find the correct timeseries to remove, and remove it
         var numSeries = this.seriesSet.length;
         for (var i = 0; i < numSeries; i++) {
@@ -245,7 +245,7 @@ export class SmothieChart {
      * As you may use a single <code>TimeSeries</code> in multiple charts with different formatting in each usage,
      * these settings are stored in the chart.
      */
-    getTimeSeriesOptions(timeSeries) {
+    getTimeSeriesOptions(timeSeries: TimeSeries): SeriesPresentationOptions {
         // Find the correct timeseries to remove, and remove it
         var numSeries = this.seriesSet.length;
         for (var i = 0; i < numSeries; i++) {
@@ -258,7 +258,7 @@ export class SmothieChart {
     /**
      * Brings the specified <code>TimeSeries</code> to the top of the chart. It will be rendered last.
      */
-    bringToFront(timeSeries) {
+    bringToFront(timeSeries: TimeSeries) {
         // Find the correct timeseries to remove, and remove it
         var numSeries = this.seriesSet.length;
         for (var i = 0; i < numSeries; i++) {
@@ -644,7 +644,7 @@ export class SmothieChart {
 
     // Sample timestamp formatting function
     /*
-    othieChart.timeFormatter = function(date) {
+    timeFormatter = function(date) {
       function pad2(number) { return (number < 10 ? '0' : '') + number }
       return pad2(date.getHours()) + ':' + pad2(date.getMinutes()) + ':' + pad2(date.getSeconds());
     }

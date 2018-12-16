@@ -25,6 +25,8 @@ import { DiscComponent } from './components/disc/disc.component';
 import { PresetsComponent } from './components/presets/presets.component';
 import { UploadComponent } from './components/upload/upload.component';
 
+import { SmoothieDirective } from './components/smoothie/smoothie.directive'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +49,9 @@ import { UploadComponent } from './components/upload/upload.component';
     PlaylistPanelComponent,
     DiscComponent,
     PresetsComponent,
-    UploadComponent
+    UploadComponent,
+
+    SmoothieDirective
   ],
   imports: [
     BrowserModule,

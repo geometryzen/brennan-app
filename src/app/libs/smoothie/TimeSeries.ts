@@ -32,7 +32,7 @@ export class TimeSeries {
   *
   * @constructor
   */
-    constructor(options: TimeSeriesOptions) {
+    constructor(options?: TimeSeriesOptions) {
         this.options = extend({}, defaultOptions, options);
         this.clear();
     }
@@ -80,7 +80,7 @@ export class TimeSeries {
      * @param sumRepeatedTimeStampValues if <code>timestamp</code> has an exact match in the series, this flag controls
      * whether it is replaced, or the values summed (defaults to false.)
      */
-    append(timestamp: number, value: number, sumRepeatedTimeStampValues: boolean): void {
+    append(timestamp: number, value: number, sumRepeatedTimeStampValues?: boolean): void {
         // Rewind until we hit an older timestamp
         let i = this.data.length - 1;
         while (i >= 0 && this.data[i][0] > timestamp) {
