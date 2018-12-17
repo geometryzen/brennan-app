@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 
 import { BrennanItem } from './brennan-item';
 import { BrennanStatus } from './brennan-status';
+import { BrennanAlbum } from './brennan-album';
 
 function appendTimeNow(url: string): string {
     return `${url}&time=${Date.now()}`
@@ -18,6 +19,14 @@ export class BrennanService {
     private baseURL = "http://192.168.0.12/b2gci.fcgi"
 
     constructor(private http: HttpClient) { }
+
+    albums(artistId: number): Observable<BrennanAlbum[]> {
+        return this.http.get<BrennanAlbum[]>(`${this.baseURL}?listartist&id=${artistId}`)
+    }
+
+    tracks(albumId: number): Observable<BrennanAlbum[]> {
+        return this.http.get<BrennanAlbum[]>(`${this.baseURL}?listalbum&id=${albumId}`)
+    }
 
     back(): Observable<string> {
         const url = appendTimeNow(`${this.baseURL}?back`)

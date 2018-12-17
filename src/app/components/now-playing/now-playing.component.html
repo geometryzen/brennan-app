@@ -16,13 +16,13 @@
         <div class="panel panel-default" data-toggle="tooltip" title="Drag items here to Play">
             <div class="panel-body">
                 <div class="npInline col-sm-8" id="nowPlayingBody">
-                    <h6 class="mylink" draggable="true" ondragstart="dragNowPlayingTrack (event)" onclick="nowPlayingTrackClick()">
+                    <h6 class="mylink" draggable="true" ondragstart="dragNowPlayingTrack (event)" (click)="onSelectTrack()">
                         <span class="glyphicon glyphicon-music"></span>&nbsp;{{track}}
                     </h6>
-                    <h6 class="mylink" draggable="true" ondragstart="dragNowPlayingArtist (event)" onclick="nowPlayingArtistClick()">
+                    <h6 class="mylink" draggable="true" ondragstart="dragNowPlayingArtist (event)" (click)="onSelectArtist()">
                         <span class="glyphicon glyphicon-user"></span>&nbsp;{{artist}}
                     </h6>
-                    <h6 class="mylink" draggable="true" ondragstart="dragNowPlayingAlbum (event)" onclick="nowPlayingAlbumClick()">
+                    <h6 class="mylink" draggable="true" ondragstart="dragNowPlayingAlbum (event)" (click)="onSelectAlbum()">
                         <span class="glyphicon glyphicon-cd"></span>&nbsp;{{album}}
                     </h6>
                     <h6 id="timeLeft">Time left:&nbsp;{{timeLeft}}</h6>

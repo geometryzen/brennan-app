@@ -3,6 +3,7 @@ import { Observable, interval } from 'rxjs';
 import { BrennanService } from 'src/app/services/brennan/brennan.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToneModalComponent } from 'src/app/dialogs/tone/tone-modal.component';
+import { BrowseService } from 'src/app/services/browse/browse.service';
 
 const delay = 500; // every 0.5 sec
 
@@ -20,11 +21,14 @@ function formatTimeLeft(seconds: number): string {
 })
 export class NowPlayingComponent implements OnInit {
 
-    constructor(private brennanService: BrennanService, private modalService: NgbModal) { }
+    constructor(private brennanService: BrennanService, private browseService: BrowseService, private modalService: NgbModal) { }
 
     track = ""
+    trackId = -1
     artist = ""
+    artistId = -1
     album = ""
+    albumId = -1
     timeLeft = ""
     playing = -1
     random: boolean = false
@@ -42,7 +46,9 @@ export class NowPlayingComponent implements OnInit {
         interval(delay).subscribe((n) => {
             this.brennanService.status().subscribe(status => {
                 this.track = status.track
+                this.trackId = parseInt(status.trackid)
                 this.artist = status.artist
+                this.artistId = parseInt(status.artistid)
                 this.timeLeft = formatTimeLeft(parseInt(status.timeLeft))
                 this.playing = status.playing
                 this.source = status.source
@@ -53,9 +59,11 @@ export class NowPlayingComponent implements OnInit {
 
                 // console.log(status)
 
-                if (this.album != status.album) {
+                const albumId = parseInt(status.albumid)
+                if (this.albumId != albumId) {
                     this.brennanService.getCurrentArt().subscribe(image => {
                         this.currentArt.nativeElement.src = window.URL.createObjectURL(image);
+                        this.albumId = albumId;
                         this.album = status.album
                     })
                 }
@@ -93,6 +101,20 @@ export class NowPlayingComponent implements OnInit {
         // $('#toneModal').modal();			
         // $("#bassSlider").val(nowPlaying.bass);
         // $("#trebleSlider").val(nowPlaying.treble);
+    }
 
+    onSelectArtist() {
+        this.browseService.selectArtist({ id: this.artistId, name: this.artist })
+    }
+
+    onSelectAlbum() {
+        this.browseService.selectArtist({ id: this.artistId, name: this.artist })
+        this.browseService.selectAlbum({ id: this.albumId, name: this.album })
+    }
+
+    onSelectTrack() {
+        this.browseService.selectArtist({ id: this.artistId, name: this.artist })
+        this.browseService.selectAlbum({ id: this.albumId, name: this.album })
+        this.browseService.selectTrack({ id: this.trackId, name: this.track })
     }
 }

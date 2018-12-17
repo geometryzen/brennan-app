@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BrennanItem } from '../../services/brennan/brennan-item';
 import { BrennanService } from '../../services/brennan/brennan.service';
+import { BrowseService } from 'src/app/services/browse/browse.service';
 
 @Component({
     selector: 'brennan-search-results',
@@ -13,7 +14,7 @@ export class SearchResultsComponent implements OnInit {
     results: BrennanItem[];
     selectedResult: BrennanItem;
 
-    constructor(private brennanService: BrennanService) { }
+    constructor(private browseService: BrowseService, private brennanService: BrennanService) { }
 
     getSearchResults(): void {
         this.brennanService.search().subscribe(results => this.results = results)
@@ -41,7 +42,8 @@ export class SearchResultsComponent implements OnInit {
     }
 
     onSelect(result: BrennanItem): void {
-        console.log(`Select: ${result.id} ${result.artist} `);
+        // console.log(`Select: ${result.id} ${result.artist} `);
         this.selectedResult = result;
+        this.browseService.selectArtist({ id: result.id, name: result.artist })
     }
 }

@@ -4,17 +4,29 @@
             or click image to open upload panel">
         <li>
             <a class="middle">
-                <div class="npInline w80"><span class="text-muted">Album </span><span id="albumname">None Selected</span></div>
+                <div class="npInline w80">
+                    <span class="text-muted">Album </span>
+                    <span id="albumname">{{album.name}}</span>
+                </div>
                 <div class="npInline w20"><img id="albumImage"></div>
             </a>
-            <!--					<a><span class="text-muted">Album </span><span id="albumname">None Selected</span><img id="albumImage" class="pull-right"></a>-->
-            <!--					<a class="col-sm-10"><span class="text-muted">Album </span><span id="albumname">None Selected</span></a>-->
         </li>
     </ul>
     <div class="ArtistScrollBox">
         <nav id="AlbumTracksBox">
             <table class="table table-hover">
-                <tbody id="AlbumTracks"></tbody>
+                <tbody id="AlbumTracks">
+                    <tr *ngFor="let track of tracks; let i = index;" tabindex="-1" class='myLink'>
+                        <td><span class="glyphicon glyphicon-play" (click)="onPlay(track)"></span></td>
+                        <td class="col-sm-10" draggable="true" ondragstart="dragSearchItem(event)" (dblclick)="onRename(track)"
+                            (click)="onSelect(track)">
+                            <span class="glyphicon glyphicon-cd"></span>&nbsp;{{track.name}}
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-option-horizontal" (click)="onOptions(track)"></span>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </nav>
     </div>

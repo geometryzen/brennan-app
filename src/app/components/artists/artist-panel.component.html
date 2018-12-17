@@ -1,12 +1,27 @@
 <div id="ArtistPanel">
     <ul class="nav nav-pills nav-stacked scrollBoxHeader" id="artistHeader">
-        <li><a><span class="text-muted">Artist </span><span id="artistname">None Selected</span></a>
+        <li>
+            <a>
+                <span class="text-muted">Artist </span>
+                <span id="artistname">{{artist.name}}</span>
+            </a>
         </li>
     </ul>
     <div class="ArtistScrollBox">
         <nav id="ArtistAlbumsBox">
             <table class="table table-hover">
-                <tbody id="ArtistAlbums"></tbody>
+                <tbody id="ArtistAlbums">
+                    <tr *ngFor="let album of albums; let i = index;" tabindex="-1" class='myLink'>
+                        <td><span class="glyphicon glyphicon-play" (click)="onPlay(album)"></span></td>
+                        <td class="col-sm-10" draggable="true" ondragstart="dragSearchItem(event)" (dblclick)="onRename(album)"
+                            (click)="onSelect(album)">
+                            <span class="glyphicon glyphicon-cd"></span>&nbsp;{{album.name}}
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-option-horizontal" (click)="onOptions(album)"></span>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </nav>
     </div>
