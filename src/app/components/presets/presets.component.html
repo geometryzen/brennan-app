@@ -1,7 +1,25 @@
 <div id="PresetsPanel">
     <div class="ScrollBox collapse in" id="presetsBox">
         <table class="table table-hover">
-            <tbody id="presets"></tbody>
+            <tbody id="presets">
+                <!--
+                <tr class="mylink" onclick="playPreset('+i+')">
+                    <td>
+                        <span class="glyphicon glyphicon-play"></span>
+                    </td>
+                    <td class="col-sm-11" draggable="true" ondragstart="dragPreset(event)" ondblclick="presetEdit('+i+')"
+                        ondragover="allowDrop(event)" ondrop="presetDrop(event,'+i+')" class="mylink">XYZ</td>
+                </tr>
+                -->
+                <tr *ngFor="let preset of presets; let i = index;" tabindex="-1" class="mylink">
+                    <td>
+                        <span class="glyphicon glyphicon-play" (click)="onPlay(i, preset)"></span>
+                    </td>
+                    <td class="col-sm-11" draggable="true" (dragstart)="dragStartPreset(i, preset)" (dblclick)="onEdit(i, preset)"
+                        (click)="onSelect(i, preset)">[{{i}}]&nbsp;{{preset.name}}
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>

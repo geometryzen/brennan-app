@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
 import { BrennanItem } from './brennan-item';
+import { BrennanPreset } from './brennan-preset';
 import { BrennanStatus } from './brennan-status';
 import { BrennanAlbum } from './brennan-album';
 
@@ -54,6 +55,17 @@ export class BrennanService {
     playID(id: number): Observable<string> {
         const url = appendTime(`${this.baseURL}?playID&${id}`)
         return this.http.get(url, { responseType: 'text' })
+    }
+
+    playPreset(index: number): Observable<string> {
+        const id = index += 6000000;
+        const url = appendTime(`${this.baseURL}?playID&${id}`)
+        return this.http.get(url, { responseType: 'text' })
+    }
+
+    presets(): Observable<BrennanPreset[]> {
+        const url = appendTime(`${this.baseURL}?getPresets`)
+        return this.http.get<BrennanPreset[]>(url)
     }
 
     search(): Observable<BrennanItem[]> {
