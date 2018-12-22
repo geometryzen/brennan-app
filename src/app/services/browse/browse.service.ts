@@ -30,18 +30,21 @@ export class BrowseService {
     constructor() { }
 
     selectArtist(artist: BrowseArtist) {
+        console.log(`artist.id=${artist.id}`)
         if (this.emitArtist) {
             this.emitArtist(artist);
         }
     }
 
     selectAlbum(album: BrowseAlbum) {
+        console.log(`album.id=${album.id}`)
         if (this.emitAlbum) {
             this.emitAlbum(album);
         }
     }
 
     selectTrack(track: BrowseTrack) {
+        console.log(`track.id=${track.id}`)
         if (this.emitTrack) {
             this.emitTrack(track);
         }

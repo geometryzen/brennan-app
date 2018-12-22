@@ -46,7 +46,7 @@ export class AlbumsPanelComponent {
   }
 
   onSelect(track: BrennanTrack) {
-    // this.browseService.selectTrack(track);
+    this.browseService.selectTrack(track);
   }
 
   onRename(track: BrennanTrack) {
