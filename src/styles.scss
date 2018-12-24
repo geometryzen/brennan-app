@@ -4,15 +4,4 @@
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
 
-
-.brennan-toggle-on {
-	color: #FFF;
-}
-
-.brennan-toggle-off {
-	color: #888;
-}
-
-.brennan-toggle-undefined {
-	color: #F00;
-}
+@import "styles-custom";

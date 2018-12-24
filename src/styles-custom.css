@@ -1,0 +1,19 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #c8c8c8;
+    background-color: #272b30
+}
+
+.brennan-toggle-on {
+	color: #FFF;
+}
+
+.brennan-toggle-off {
+	color: #888;
+}
+
+.brennan-toggle-undefined {
+	color: #F00;
+}
