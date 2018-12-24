@@ -1,6 +1,6 @@
 <div id="searchTabs" class="btn-group btn-group-justified">
     <a id='SearchTab' class="btn btn-default" (click)="selectSearchSubPanel(0)">
-        <span class="glyphicon glyphicon-search"></span>
+        <span class="glyphicon glyphicon-search  {{searchSubPanel == 0 | toggleEnabled}}"></span>
     </a>
     <a id='VTunerTab' class="btn btn-default" (click)="selectSearchSubPanel(1)">vTuner</a>
     <a id='YoutubeTab' class="btn btn-default" (click)="selectSearchSubPanel(2)" data-toggle="tooltip" title="Experimental">Youtube*</a>

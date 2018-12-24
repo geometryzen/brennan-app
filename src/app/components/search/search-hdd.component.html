@@ -1,18 +1,30 @@
 <div id="SearchPanel" class="tab-paneDGH">
     <div id="searchButtons" class="input-group scrollBoxHeader topButtons">
         <div>
-            <input type="text" id="searchInput" class="form-control" size="6" placeholder="Search B2" onkeyup="searchFunction()">
+            <input type="text" id="searchInput" class="form-control" size="6" placeholder="Search B2" (keyup)="searchFunction()">
         </div>
-        <div class="input-group-btn">
-            <!--				<a tabindex="-1" class="btn btn-default iconToggle" href="#" data-toggle="tooltip" title="Search Only Current Playlist"><span class="glyphicon glyphicon-list myGrey" id='playlistCheckbox'></span></a>-->
-            <a tabindex="-1" class="btn btn-default iconToggle" href="#" title="Artists toggle"><span class="glyphicon glyphicon-user"
-                    id='artistCheckbox'></span></a>
-            <a tabindex="-1" class="btn btn-default iconToggle" href="#" title="Albums toggle"><span class="glyphicon glyphicon-cd"
-                    id='albumCheckbox'></span></a>
-            <a tabindex="-1" class="btn btn-default iconToggle" href="#" title="Tracks toggle"><span class="glyphicon glyphicon-music"
-                    id='trackCheckbox'></span></a>
-            <a tabindex="-1" class="btn btn-default iconToggle" href="#" title="Radio Stations toggle"><span class="icon-radioMast"
-                    id='radioCheckbox'></span></a>
+        <div class="btn-group btn-group-justified">
+                <a class="btn btn-default btn-lg" (click)="onArtistToggle()" href="#" title="Artists toggle">
+                <span class="glyphicon glyphicon-user {{artistsEnabled | toggleEnabled}}"></span>
+            </a>
+            <a class="btn btn-default btn-lg" (click)="onAlbumToggle()" href="#" title="Albums toggle">
+                <span class="glyphicon glyphicon-cd {{albumsEnabled | toggleEnabled}}"></span>
+            </a>
+            <a class="btn btn-default btn-lg" (click)="onTrackToggle()" href="#" title="Tracks toggle">
+                <span class="glyphicon glyphicon-music {{tracksEnabled | toggleEnabled}}"></span>
+            </a>
+            <a class="btn btn-default btn-lg" (click)="onRadioToggle()" href="#" title="Radio toggle">
+                <span class="icon-radioMast  {{radioEnabled | toggleEnabled}}"></span>
+            </a>
+            <a class="btn btn-default btn-lg" (click)="onVideoToggle()" href="#" title="Video toggle">
+                <span class="glyphicon glyphicon-facetime-video  {{videoEnabled | toggleEnabled}}"></span>
+            </a>
+            <a class="btn btn-default btn-lg" (click)="onAlphaToggle()" href="#" data-toggle="tooltip" title="Alpha Sort On/Off">
+                <span class="glyphicon glyphicon-sort-by-alphabet  {{sortEnabled | toggleEnabled}}"></span>
+            </a>
+            <a class="btn btn-default btn-lg" (click)="onScopeToggle()" href="#" data-toggle="tooltip" title="Search Only Current Playlist">
+                <span class="glyphicon glyphicon-list  {{scopeEnabled | toggleEnabled}}"></span>
+            </a>
         </div>
     </div>
     <div class="SearchScrollBox" id="SearchContainer">

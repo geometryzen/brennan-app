@@ -16,38 +16,38 @@
         <div class="panel panel-default" data-toggle="tooltip" title="Drag items here to Play">
             <div class="panel-body">
                 <div class="npInline col-sm-8" id="nowPlayingBody">
-                    <h6 class="mylink" draggable="true" ondragstart="dragNowPlayingTrack (event)" (click)="onSelectTrack()">
+                    <div class="mylink" draggable="true" ondragstart="dragNowPlayingTrack (event)" (click)="onSelectTrack()">
                         <span class="glyphicon glyphicon-music"></span>&nbsp;{{track}}
-                    </h6>
-                    <h6 class="mylink" draggable="true" ondragstart="dragNowPlayingArtist (event)" (click)="onSelectArtist()">
+                    </div>
+                    <div class="mylink" draggable="true" ondragstart="dragNowPlayingArtist (event)" (click)="onSelectArtist()">
                         <span class="glyphicon glyphicon-user"></span>&nbsp;{{artist}}
-                    </h6>
-                    <h6 class="mylink" draggable="true" ondragstart="dragNowPlayingAlbum (event)" (click)="onSelectAlbum()">
+                    </div>
+                    <div class="mylink" draggable="true" ondragstart="dragNowPlayingAlbum (event)" (click)="onSelectAlbum()">
                         <span class="glyphicon glyphicon-cd"></span>&nbsp;{{album}}
-                    </h6>
-                    <h6 id="timeLeft">Time left:&nbsp;{{timeLeft}}</h6>
+                    </div>
+                    <div id="timeLeft">Time left:&nbsp;{{timeLeft}}</div>
                 </div>
                 <div class="npInline col-sm-4" id="nowPlayingArt">
-                    <img #currentArt src="assets/images/noimage.jpg" width="100%">
+                    <img #currentArt src="assets/images/noimage.jpg">
                 </div>
             </div>
         </div>
 
         <!-- CD Control Buttons -->
         <div class="btn-group btn-group-justified">
-            <a href="#" class="btn btn-default" data-toggle="tooltip" title="Tone Control" (click)="onToneControl()">
+            <a href="#" class="btn btn-default btn-lg" data-toggle="tooltip" title="Tone Control" (click)="onToneControl()">
                 <span class="glyphicon glyphicon-music"></span>
             </a>
             <a class="btn btn-default btn-block" href="#" data-toggle="tooltip" title="Random Play On/Off" (click)="onRandomToggle()">
                 <span id="randomIcon" class="{{random | randomToClass}}"></span>
             </a>
-            <a href="#" class="btn btn-default" title="Back button" (click)="onBack()">
+            <a href="#" class="btn btn-default btn-lg" title="Back button" (click)="onBack()">
                 <span class="glyphicon glyphicon-backward"></span>
             </a>
-            <a href="#" class="btn btn-default" title="Play Stop button" (click)="onPausePlay()">
+            <a href="#" class="btn btn-default btn-lg" title="Play Stop button" (click)="onPausePlay()">
                 <span class="{{playing | playingToClass}}"></span>
             </a>
-            <a href="#" class="btn btn-default" title="Next button" (click)="onNext()">
+            <a href="#" class="btn btn-default btn-lg" title="Next button" (click)="onNext()">
                 <span class="glyphicon glyphicon-forward"></span>
             </a>
         </div>

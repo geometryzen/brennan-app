@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule, NgbActiveModal, NgbTabsetModule } from '@ng-bootstrap/ng-bootstrap';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { AppComponent } from './components/app/app.component';
 
@@ -9,6 +10,8 @@ import { NowPlayingComponent } from './components/now-playing/now-playing.compon
 import { PlayingToClassPipe } from './components/now-playing/playing-to-class.pipe';
 import { PlayingToTextPipe } from './components/now-playing/playing-to-text.pipe';
 import { RandomToClassPipe } from './components/now-playing/random-to-class.pipe';
+import { ToggleEnabledPipe } from './components/search/toggle-enabled.pipe';
+import { IconFromIdPipe } from './components/search/icon-from-id.pipe';
 
 import { SearchPanelComponent } from './components/search/search-panel.component';
 import { SearchResultsComponent } from './components/search/results.component';
@@ -36,6 +39,8 @@ import { ToneModalComponent } from './dialogs/tone/tone-modal.component';
     PlayingToClassPipe,
     PlayingToTextPipe,
     RandomToClassPipe,
+    ToggleEnabledPipe,
+    IconFromIdPipe,
 
     SearchPanelComponent,
     SearchResultsComponent,
@@ -62,7 +67,8 @@ import { ToneModalComponent } from './dialogs/tone/tone-modal.component';
     BrowserModule,
     HttpClientModule,
     NgbTabsetModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ScrollingModule
   ],
   providers: [
     NgbActiveModal

@@ -23,7 +23,9 @@ Note: In order for the developent server to communicate with the brennan web ser
 
 ### Updating the lighttpd.conf file
 
-The copy can be performed with the following command from the `brennan-app` folder. 
+The copy can be performed with the following command from the `brennan-app` folder.
+
+The actual IP address you should use is displayed in the brennan b2.
 
 ```
 scp lighttpd.conf root@192.168.0.12:/var/www

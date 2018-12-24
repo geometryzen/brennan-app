@@ -12,4 +12,8 @@ export class SearchPanelComponent {
     selectSearchSubPanel(searchSubPanel: number) {
         this.searchSubPanel = searchSubPanel
     }
+
+    onCategoryChange(category: string): void {
+        console.log(`onCategoryChange(${category})`)
+    }
 }

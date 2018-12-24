@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BrennanItem } from 'src/app/services/brennan/brennan-item';
+import { BrennanSearchItem } from 'src/app/services/brennan/brennan-search-item';
 import { BrennanService } from 'src/app/services/brennan/brennan.service';
 import { BrowseService } from 'src/app/services/browse/browse.service';
 import { BrowseAlbum } from 'src/app/services/browse/browse-album';

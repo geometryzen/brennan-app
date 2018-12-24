@@ -1,6 +1,6 @@
-import { BrennanItem } from '../services/brennan/brennan-item';
+import { BrennanSearchItem } from '../services/brennan/brennan-search-item';
 
-export const RESULTS: BrennanItem[] = [
+export const RESULTS: BrennanSearchItem[] = [
     { id: 11, artist: '10,000 Maniacs' },
     { id: 12, artist: 'AC-DC' },
     { id: 13, artist: 'Adele' },
