@@ -37,7 +37,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   onWindowResize() {
-    console.log("onWindowResize()")
     this.responsiveService.checkWidth()
   }
 }

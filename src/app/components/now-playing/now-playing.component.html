@@ -1,70 +1,72 @@
-<div id="nowPlayingWell" class="well well-sm" ondragover="allowDrop(event)" ondrop="dropSpeaker(event)">
-    <ul class="nav nav-pills nav-stacked scrollBoxHeader">
-        <li id="t2">
-            <a class="col-sm-10" id="t3">
-                <span>Brennan B2</span>
-            </a>
-            <a id="settingsButton" tabindex="-1" class="col-sm-2 btn btn-default" href="#" title="Settings & Status"
-                role="button" (click)="openSettingsModal()"><span class="glyphicon glyphicon-cog"></span></a>
-        </li>
-    </ul>
-    <div id="nowPlayingPanel">
-
-        <!-- Now Playing Information -->
-        <div data-toggle="tooltip" title="Drag items here to Play">
-            <div class="panel-body">
-                <div class="npInline col-sm-8" id="nowPlayingBody">
-                    <div class="mylink" draggable="true" ondragstart="dragNowPlayingSource (event)" (click)="onSelectSource()">
-                        <span class="text-muted">Source </span>
-                        <span>{{source}}&nbsp;{{playing | playingToText}}</span>
-                    </div>
-                    <div class="mylink" draggable="true" ondragstart="dragNowPlayingTrack (event)" (click)="onSelectTrack()">
-                        <span class="text-muted">Track&nbsp;</span>&nbsp;{{track}}
-                    </div>
-                    <div class="mylink" draggable="true" ondragstart="dragNowPlayingArtist (event)" (click)="onSelectArtist()">
-                        <span class="text-muted">Artist</span>&nbsp;{{artist}}
-                    </div>
-                    <div class="mylink" draggable="true" ondragstart="dragNowPlayingAlbum (event)" (click)="onSelectAlbum()">
-                        <span class="text-muted">Album</span>&nbsp;{{album}}
-                    </div>
-                    <span class="text-muted">Time left</span>&nbsp;{{timeLeft}}
+<!--
+<ul class="nav nav-pills nav-stacked scrollBoxHeader">
+    <li id="t2">
+        <a class="col-sm-10" id="t3">
+            <span>Brennan B2</span>
+        </a>
+        <a id="settingsButton" tabindex="-1" class="col-sm-2 btn btn-default" href="#" title="Settings & Status" role="button"
+            (click)="openSettingsModal()"><span class="glyphicon glyphicon-cog"></span></a>
+    </li>
+</ul>
+-->
+<div>
+    <!-- Now Playing Information -->
+    <div data-toggle="tooltip" title="Drag items here to Play">
+        <div class="panel-body">
+            <div class="npInline col-sm-8" id="nowPlayingBody">
+                <div class="mylink" draggable="true" ondragstart="dragNowPlayingSource (event)" (click)="onSelectSource()">
+                    <span class="text-muted">Source </span>
+                    <span>{{source}}&nbsp;{{playing | playingToText}}</span>
                 </div>
-                <div class="npInline col-sm-4" id="nowPlayingArt">
-                    <img #currentArt src="assets/images/noimage.jpg" width="100%">
+                <div class="mylink" draggable="true" ondragstart="dragNowPlayingTrack (event)" (click)="onSelectTrack()">
+                    <span class="text-muted">Track&nbsp;</span>&nbsp;{{track}}
                 </div>
+                <div class="mylink" draggable="true" ondragstart="dragNowPlayingArtist (event)" (click)="onSelectArtist()">
+                    <span class="text-muted">Artist</span>&nbsp;{{artist}}
+                </div>
+                <div class="mylink" draggable="true" ondragstart="dragNowPlayingAlbum (event)" (click)="onSelectAlbum()">
+                    <span class="text-muted">Album</span>&nbsp;{{album}}
+                </div>
+                <span class="text-muted">Time left</span>&nbsp;{{timeLeft}}
+            </div>
+            <div class="npInline col-sm-4" id="nowPlayingArt">
+                <img #currentArt src="assets/images/noimage.jpg" width="100%">
             </div>
         </div>
+    </div>
 
-        <!-- Time Series -->
-        <div id=canvasBox>
-            <canvas brennan-smoothie id="mycanvas" width="100%" height="60"></canvas>
-        </div>
+    <!-- Time Series -->
+    <!--
+    <div id=canvasBox>
+        <canvas brennan-smoothie id="mycanvas" width="100%" height="60"></canvas>
+    </div>
+    -->
 
-        <!-- Volume Control Slider -->
-        <div data-toggle="tooltip" title="Drag items here to Play">
-            <div id="volumeSlider">
-                <input #volumeInput type="range" title="Volume" min="0" max="64" value="{{volume}}" (input)="onInputVolume()" (change)="onChangeVolume()">
-                <span class="text-muted">Volume</span>&nbsp;{{volume}}
-            </div>
+    <!-- Volume Control Slider -->
+    <div data-toggle="tooltip" title="Drag items here to Play">
+        <div id="volumeSlider">
+            <input #volumeInput type="range" title="Volume" min="0" max="64" value="{{volume}}" (input)="onInputVolume()"
+                (change)="onChangeVolume()">
+            <span class="text-muted">Volume</span>&nbsp;{{volume}}
         </div>
+    </div>
 
-        <!-- CD Control Buttons -->
-        <div class="btn-group btn-group-justified">
-            <a href="#" class="btn btn-default btn-lg" data-toggle="tooltip" title="Tone Control" (click)="onToneControl()">
-                <span class="glyphicon glyphicon-music"></span>
-            </a>
-            <a class="btn btn-default btn-block" href="#" data-toggle="tooltip" title="Random Play On/Off" (click)="onRandomToggle()">
-                <span id="randomIcon" class="{{random | randomToClass}}"></span>
-            </a>
-            <a href="#" class="btn btn-default btn-lg" title="Back button" (click)="onBack()">
-                <span class="glyphicon glyphicon-backward"></span>
-            </a>
-            <a href="#" class="btn btn-default btn-lg" title="Play Stop button" (click)="onPausePlay()">
-                <span class="{{playing | playingToClass}}"></span>
-            </a>
-            <a href="#" class="btn btn-default btn-lg" title="Next button" (click)="onNext()">
-                <span class="glyphicon glyphicon-forward"></span>
-            </a>
-        </div>
+    <!-- CD Control Buttons -->
+    <div class="btn-group btn-group-justified">
+        <a href="#" class="btn btn-default btn-lg" data-toggle="tooltip" title="Tone Control" (click)="onToneControl()">
+            <span class="glyphicon glyphicon-music"></span>
+        </a>
+        <a class="btn btn-default btn-block" href="#" data-toggle="tooltip" title="Random Play On/Off" (click)="onRandomToggle()">
+            <span id="randomIcon" class="{{random | randomToClass}}"></span>
+        </a>
+        <a href="#" class="btn btn-default btn-lg" title="Back button" (click)="onBack()">
+            <span class="glyphicon glyphicon-backward"></span>
+        </a>
+        <a href="#" class="btn btn-default btn-lg" title="Play Stop button" (click)="onPausePlay()">
+            <span class="{{playing | playingToClass}}"></span>
+        </a>
+        <a href="#" class="btn btn-default btn-lg" title="Next button" (click)="onNext()">
+            <span class="glyphicon glyphicon-forward"></span>
+        </a>
     </div>
 </div>

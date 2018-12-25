@@ -1,13 +1,12 @@
 <div class="container-fluid" (window:resize)="onWindowResize($event)">
 
-  <!-- handset UI -->
-  <div id="handsetNav" class="row" *ngIf="isMobile">
-    <div class="well well-sm">
-      <div class="col-md-4">
+  <div class="row">
+    <div class="col">
+      <div class="well well-sm">
         <div class="btn-group">
           <a tabindex="-1" class="navbar-brand" href="#" aria-hidden="true">Brennan B2</a>
         </div>
-        <div class="btn-group pull-right btn-group-right">
+        <div class="btn-group pull-right btn-group-right d-block d-lg-none">
 
           <a id="selectedPanel" tabindex="0" href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
             role="button" aria-haspopup="true" aria-expanded="false" aria-label="Main Navigation - Now Playing Selected">
@@ -46,17 +45,19 @@
 
   <div class="row">
     <div class="col">
-      <brennan-now-playing></brennan-now-playing>
-      <div class="well well-sm">
+      <div class="well well-sm" ondragover="allowDrop(event)" ondrop="dropSpeaker(event)">
+        <brennan-now-playing></brennan-now-playing>
+      </div>
+      <div class="well well-sm d-none">
         <brennan-actions></brennan-actions>
       </div>
     </div>
-    <div class="col" *ngIf="!isMobile">
+    <div class="col d-none d-lg-block">
       <div class="well well-sm">
         <brennan-search-panel></brennan-search-panel>
       </div>
     </div>
-    <div class="col" *ngIf="!isMobile">
+    <div class="col d-none d-lg-block">
       <div class="well well-sm">
         <brennan-artist-panel></brennan-artist-panel>
       </div>
