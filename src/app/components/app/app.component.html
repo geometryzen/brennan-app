@@ -1,8 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid" (window:resize)="onWindowResize($event)">
 
   <!-- handset UI -->
-  <!--
-  <div id="handsetNav" class="row">
+  <div id="handsetNav" class="row" *ngIf="isMobile">
     <div class="well well-sm">
       <div class="col-md-4">
         <div class="btn-group">
@@ -44,25 +43,24 @@
       </div>
     </div>
   </div>
-  -->
 
   <div class="row">
-    <div class="col-sm">
+    <div class="col">
       <brennan-now-playing></brennan-now-playing>
       <div class="well well-sm">
         <brennan-actions></brennan-actions>
       </div>
     </div>
-    <div class="col-sm">
-      <div class="well well-sm" id="middleWell">
+    <div class="col" *ngIf="!isMobile">
+      <div class="well well-sm">
         <brennan-search-panel></brennan-search-panel>
       </div>
     </div>
-    <div class="col-sm">
-      <div id="ArtistWell" class="well well-sm">
+    <div class="col" *ngIf="!isMobile">
+      <div class="well well-sm">
         <brennan-artist-panel></brennan-artist-panel>
       </div>
-      <div id="AlbumWell" class="well well-sm">
+      <div class="well well-sm">
         <brennan-albums-panel></brennan-albums-panel>
       </div>
     </div>

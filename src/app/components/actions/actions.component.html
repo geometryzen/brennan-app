@@ -1,4 +1,4 @@
-<div id="playlistTabs" class="btn-group btn-group-justified">
+<div id="playlistTabs" class="btn-group btn-group-justified" *ngIf="!isMobile">
     <a id='playlistTab' class="btn btn-default" (click)="onSelectSubPanel(0)">Playlists</a>
     <a id='CDTab' class="btn btn-default" (click)="onSelectSubPanel(1)">CD</a>
     <a id='PresetsTab' class="btn btn-default" (click)="onSelectSubPanel(2)">Presets</a>
